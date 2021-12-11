@@ -167,6 +167,8 @@
     <Compile Include="Controllers\AdministrateurController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DiplomeController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Controllers\DocumentPublierController.cs" />
     <Compile Include="Controllers\DomaineFormationController.cs" />
     <Compile Include="Controllers\EtudiantController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -430,6 +432,16 @@
     <Content Include="Views\NatureDocument\Create.cshtml" />
     <Content Include="Views\NatureDocument\Edit.cshtml" />
     <Content Include="Views\NatureDocument\Delete.cshtml" />
+    <Content Include="Views\Document\Index.cshtml" />
+    <Content Include="Views\Document\Details.cshtml" />
+    <Content Include="Views\Document\Create.cshtml" />
+    <Content Include="Views\Document\Edit.cshtml" />
+    <Content Include="Views\Document\Delete.cshtml" />
+    <Content Include="Views\DocumentPublier\Index.cshtml" />
+    <Content Include="Views\DocumentPublier\Details.cshtml" />
+    <Content Include="Views\DocumentPublier\Create.cshtml" />
+    <Content Include="Views\DocumentPublier\Edit.cshtml" />
+    <Content Include="Views\DocumentPublier\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
