@@ -164,8 +164,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministrateurController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\EtudiantController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UniversiteController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -394,6 +397,21 @@
     <Content Include="Views\Partials\_Sidebar.cshtml" />
     <Content Include="Views\Layouts\_Default.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Administrateur\Index.cshtml" />
+    <Content Include="Views\Administrateur\Details.cshtml" />
+    <Content Include="Views\Administrateur\Create.cshtml" />
+    <Content Include="Views\Administrateur\Edit.cshtml" />
+    <Content Include="Views\Administrateur\Delete.cshtml" />
+    <Content Include="Views\Etudiant\Index.cshtml" />
+    <Content Include="Views\Etudiant\Details.cshtml" />
+    <Content Include="Views\Etudiant\Create.cshtml" />
+    <Content Include="Views\Etudiant\Edit.cshtml" />
+    <Content Include="Views\Etudiant\Delete.cshtml" />
+    <Content Include="Views\Universite\Index.cshtml" />
+    <Content Include="Views\Universite\Details.cshtml" />
+    <Content Include="Views\Universite\Create.cshtml" />
+    <Content Include="Views\Universite\Edit.cshtml" />
+    <Content Include="Views\Universite\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
