@@ -1,16 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
-
+@RenderPage("~/Views/Partials/_Head.cshtml")
 <body>
+@RenderPage("~/Views/Partials/_Nav.cshtml")
+@RenderPage("~/Views/Partials/_Sidebar.cshtml")
 
-<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="js/custom.js"></script>
+    @RenderBody()
+    @Scripts.Render("~/Assets/js")
+
 	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
