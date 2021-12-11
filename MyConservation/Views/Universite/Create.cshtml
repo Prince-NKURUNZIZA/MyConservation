@@ -1,0 +1,32 @@
+﻿@model MyConservation.Models.Universite
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Layouts/_Default.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Universite</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nomUniversite)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nomUniversite)
+            @Html.ValidationMessageFor(model => model.nomUniversite)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

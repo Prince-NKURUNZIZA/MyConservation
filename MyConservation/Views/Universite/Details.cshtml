@@ -1,0 +1,23 @@
+﻿@model MyConservation.Models.Universite
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layouts/_Default.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Universite</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nomUniversite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nomUniversite)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
