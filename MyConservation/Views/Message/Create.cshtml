@@ -1,0 +1,65 @@
+﻿@model MyConservation.Models.Message
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Layouts/_Default.cshtml";
+}
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Message</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nom)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nom)
+            @Html.ValidationMessageFor(model => model.nom)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telephone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telephone)
+            @Html.ValidationMessageFor(model => model.telephone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.objet)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.objet)
+            @Html.ValidationMessageFor(model => model.objet)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.message1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.message1)
+            @Html.ValidationMessageFor(model => model.message1)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+</div>

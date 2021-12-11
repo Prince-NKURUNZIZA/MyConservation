@@ -171,7 +171,10 @@
     <Compile Include="Controllers\DocumentPublierController.cs" />
     <Compile Include="Controllers\DomaineFormationController.cs" />
     <Compile Include="Controllers\EtudiantController.cs" />
+    <Compile Include="Controllers\EvenementController.cs" />
+    <Compile Include="Controllers\GalerieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NatureDocumentController.cs" />
     <Compile Include="Controllers\UniversiteController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -442,6 +445,21 @@
     <Content Include="Views\DocumentPublier\Create.cshtml" />
     <Content Include="Views\DocumentPublier\Edit.cshtml" />
     <Content Include="Views\DocumentPublier\Delete.cshtml" />
+    <Content Include="Views\Galerie\Index.cshtml" />
+    <Content Include="Views\Galerie\Details.cshtml" />
+    <Content Include="Views\Galerie\Create.cshtml" />
+    <Content Include="Views\Galerie\Edit.cshtml" />
+    <Content Include="Views\Galerie\Delete.cshtml" />
+    <Content Include="Views\Evenement\Index.cshtml" />
+    <Content Include="Views\Evenement\Details.cshtml" />
+    <Content Include="Views\Evenement\Create.cshtml" />
+    <Content Include="Views\Evenement\Edit.cshtml" />
+    <Content Include="Views\Evenement\Delete.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\Details.cshtml" />
+    <Content Include="Views\Message\Create.cshtml" />
+    <Content Include="Views\Message\Edit.cshtml" />
+    <Content Include="Views\Message\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
