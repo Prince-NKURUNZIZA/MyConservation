@@ -1,0 +1,90 @@
+﻿@model MyConservation.Models.Document
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Layouts/_Default.cshtml";
+}
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Document</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Etudiant.nom)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Etudiant.nom)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Universite1.nomUniversite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Universite1.nomUniversite)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Diplome1.niveau)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Diplome1.niveau)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DomaineFormation.nomDomaine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DomaineFormation.nomDomaine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NatureDocument.nature)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NatureDocument.nature)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.annee)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.annee)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fichier)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fichier)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.etatPublication)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.etatPublication)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.autoriseTelecharge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.autoriseTelecharge)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+</div>

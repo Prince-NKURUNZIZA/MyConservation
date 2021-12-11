@@ -1,0 +1,105 @@
+﻿@model MyConservation.Models.Document
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Layouts/_Default.cshtml";
+}
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Document</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.titre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.titre)
+            @Html.ValidationMessageFor(model => model.titre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nomAuteur, "Etudiant")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("nomAuteur", String.Empty)
+            @Html.ValidationMessageFor(model => model.nomAuteur)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.universite, "Universite1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("universite", String.Empty)
+            @Html.ValidationMessageFor(model => model.universite)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.diplome, "Diplome1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("diplome", String.Empty)
+            @Html.ValidationMessageFor(model => model.diplome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.domaine, "DomaineFormation")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("domaine", String.Empty)
+            @Html.ValidationMessageFor(model => model.domaine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nature, "NatureDocument")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("nature", String.Empty)
+            @Html.ValidationMessageFor(model => model.nature)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.annee)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.annee)
+            @Html.ValidationMessageFor(model => model.annee)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fichier)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fichier)
+            @Html.ValidationMessageFor(model => model.fichier)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.etatPublication)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.etatPublication)
+            @Html.ValidationMessageFor(model => model.etatPublication)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.autoriseTelecharge)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.autoriseTelecharge)
+            @Html.ValidationMessageFor(model => model.autoriseTelecharge)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+    </div>
