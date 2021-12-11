@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ConservationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ConservationModelStoreContainer">
+          <EntitySet Name="Administrateurs" EntityType="ConservationModel.Store.Administrateurs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Diplomes" EntityType="ConservationModel.Store.Diplomes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentPubliers" EntityType="ConservationModel.Store.DocumentPubliers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Documents" EntityType="ConservationModel.Store.Documents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DomaineFormations" EntityType="ConservationModel.Store.DomaineFormations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Etudiants" EntityType="ConservationModel.Store.Etudiants" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Evenements" EntityType="ConservationModel.Store.Evenements" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Galeries" EntityType="ConservationModel.Store.Galeries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Messages" EntityType="ConservationModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NatureDocuments" EntityType="ConservationModel.Store.NatureDocuments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Universites" EntityType="ConservationModel.Store.Universites" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__DocumentP__titre__22AA2996" Association="ConservationModel.Store.FK__DocumentP__titre__22AA2996">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="DocumentPubliers" EntitySet="DocumentPubliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__diplo__1DE57479" Association="ConservationModel.Store.FK__Documents__diplo__1DE57479">
+            <End Role="Diplomes" EntitySet="Diplomes" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__domai__1ED998B2" Association="ConservationModel.Store.FK__Documents__domai__1ED998B2">
+            <End Role="DomaineFormations" EntitySet="DomaineFormations" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__natur__1FCDBCEB" Association="ConservationModel.Store.FK__Documents__natur__1FCDBCEB">
+            <End Role="NatureDocuments" EntitySet="NatureDocuments" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__nomAu__1BFD2C07" Association="ConservationModel.Store.FK__Documents__nomAu__1BFD2C07">
+            <End Role="Etudiants" EntitySet="Etudiants" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__unive__1CF15040" Association="ConservationModel.Store.FK__Documents__unive__1CF15040">
+            <End Role="Universites" EntitySet="Universites" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Galeries__evenem__276EDEB3" Association="ConservationModel.Store.FK__Galeries__evenem__276EDEB3">
+            <End Role="Evenements" EntitySet="Evenements" />
+            <End Role="Galeries" EntitySet="Galeries" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Administrateurs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="prenom" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="adresse" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="telephone" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="sexe" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Diplomes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="niveau" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DocumentPubliers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="titre" Type="int" Nullable="false" />
+          <Property Name="commentaire" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Documents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="titre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="nomAuteur" Type="int" Nullable="false" />
+          <Property Name="universite" Type="int" Nullable="false" />
+          <Property Name="diplome" Type="int" Nullable="false" />
+          <Property Name="domaine" Type="int" Nullable="false" />
+          <Property Name="nature" Type="int" Nullable="false" />
+          <Property Name="annee" Type="int" Nullable="false" />
+          <Property Name="fichier" Type="text" Nullable="false" />
+          <Property Name="etatPublication" Type="bit" Nullable="false" />
+          <Property Name="autoriseTelecharge" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DomaineFormations">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomDomaine" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Etudiants">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="prenom" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="adresse" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="sexe" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="nationalite" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Evenements">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="titreEvenement" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="commentaire" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Galeries">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="photo" Type="varbinary(max)" Nullable="false" />
+          <Property Name="evenement" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="telephone" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="objet" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="message" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NatureDocuments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nature" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Universites">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomUniversite" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__DocumentP__titre__22AA2996">
+          <End Role="Documents" Type="ConservationModel.Store.Documents" Multiplicity="1" />
+          <End Role="DocumentPubliers" Type="ConservationModel.Store.DocumentPubliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DocumentPubliers">
+              <PropertyRef Name="titre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__diplo__1DE57479">
+          <End Role="Diplomes" Type="ConservationModel.Store.Diplomes" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Diplomes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="diplome" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__domai__1ED998B2">
+          <End Role="DomaineFormations" Type="ConservationModel.Store.DomaineFormations" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomaineFormations">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="domaine" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__natur__1FCDBCEB">
+          <End Role="NatureDocuments" Type="ConservationModel.Store.NatureDocuments" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NatureDocuments">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="nature" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__nomAu__1BFD2C07">
+          <End Role="Etudiants" Type="ConservationModel.Store.Etudiants" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etudiants">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="nomAuteur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__unive__1CF15040">
+          <End Role="Universites" Type="ConservationModel.Store.Universites" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Universites">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="universite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Galeries__evenem__276EDEB3">
+          <End Role="Evenements" Type="ConservationModel.Store.Evenements" Multiplicity="1" />
+          <End Role="Galeries" Type="ConservationModel.Store.Galeries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Evenements">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Galeries">
+              <PropertyRef Name="evenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConservationModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ConservationEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrateurs" EntityType="ConservationModel.Administrateur" />
+          <EntitySet Name="Diplomes" EntityType="ConservationModel.Diplome" />
+          <EntitySet Name="DocumentPubliers" EntityType="ConservationModel.DocumentPublier" />
+          <EntitySet Name="Documents" EntityType="ConservationModel.Document" />
+          <EntitySet Name="DomaineFormations" EntityType="ConservationModel.DomaineFormation" />
+          <EntitySet Name="Etudiants" EntityType="ConservationModel.Etudiant" />
+          <EntitySet Name="Evenements" EntityType="ConservationModel.Evenement" />
+          <EntitySet Name="Galeries" EntityType="ConservationModel.Galery" />
+          <EntitySet Name="Messages" EntityType="ConservationModel.Message" />
+          <EntitySet Name="NatureDocuments" EntityType="ConservationModel.NatureDocument" />
+          <EntitySet Name="Universites" EntityType="ConservationModel.Universite" />
+          <AssociationSet Name="FK__Documents__diplo__1DE57479" Association="ConservationModel.FK__Documents__diplo__1DE57479">
+            <End Role="Diplomes" EntitySet="Diplomes" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DocumentP__titre__22AA2996" Association="ConservationModel.FK__DocumentP__titre__22AA2996">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="DocumentPubliers" EntitySet="DocumentPubliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__domai__1ED998B2" Association="ConservationModel.FK__Documents__domai__1ED998B2">
+            <End Role="DomaineFormations" EntitySet="DomaineFormations" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__natur__1FCDBCEB" Association="ConservationModel.FK__Documents__natur__1FCDBCEB">
+            <End Role="NatureDocuments" EntitySet="NatureDocuments" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__nomAu__1BFD2C07" Association="ConservationModel.FK__Documents__nomAu__1BFD2C07">
+            <End Role="Etudiants" EntitySet="Etudiants" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documents__unive__1CF15040" Association="ConservationModel.FK__Documents__unive__1CF15040">
+            <End Role="Universites" EntitySet="Universites" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Galeries__evenem__276EDEB3" Association="ConservationModel.FK__Galeries__evenem__276EDEB3">
+            <End Role="Evenements" EntitySet="Evenements" />
+            <End Role="Galeries" EntitySet="Galeries" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Administrateur">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="prenom" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="adresse" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="telephone" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="sexe" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Diplome">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="niveau" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="ConservationModel.FK__Documents__diplo__1DE57479" FromRole="Diplomes" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="DocumentPublier">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="titre" Type="Int32" Nullable="false" />
+          <Property Name="commentaire" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Document" Relationship="ConservationModel.FK__DocumentP__titre__22AA2996" FromRole="DocumentPubliers" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="titre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="nomAuteur" Type="Int32" Nullable="false" />
+          <Property Name="universite" Type="Int32" Nullable="false" />
+          <Property Name="diplome" Type="Int32" Nullable="false" />
+          <Property Name="domaine" Type="Int32" Nullable="false" />
+          <Property Name="nature" Type="Int32" Nullable="false" />
+          <Property Name="annee" Type="Int32" Nullable="false" />
+          <Property Name="fichier" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="etatPublication" Type="Boolean" Nullable="false" />
+          <Property Name="autoriseTelecharge" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Diplome1" Relationship="ConservationModel.FK__Documents__diplo__1DE57479" FromRole="Documents" ToRole="Diplomes" />
+          <NavigationProperty Name="DocumentPubliers" Relationship="ConservationModel.FK__DocumentP__titre__22AA2996" FromRole="Documents" ToRole="DocumentPubliers" />
+          <NavigationProperty Name="DomaineFormation" Relationship="ConservationModel.FK__Documents__domai__1ED998B2" FromRole="Documents" ToRole="DomaineFormations" />
+          <NavigationProperty Name="NatureDocument" Relationship="ConservationModel.FK__Documents__natur__1FCDBCEB" FromRole="Documents" ToRole="NatureDocuments" />
+          <NavigationProperty Name="Etudiant" Relationship="ConservationModel.FK__Documents__nomAu__1BFD2C07" FromRole="Documents" ToRole="Etudiants" />
+          <NavigationProperty Name="Universite1" Relationship="ConservationModel.FK__Documents__unive__1CF15040" FromRole="Documents" ToRole="Universites" />
+        </EntityType>
+        <EntityType Name="DomaineFormation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nomDomaine" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="ConservationModel.FK__Documents__domai__1ED998B2" FromRole="DomaineFormations" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="Etudiant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="prenom" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="adresse" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="sexe" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="nationalite" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="ConservationModel.FK__Documents__nomAu__1BFD2C07" FromRole="Etudiants" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="Evenement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="titreEvenement" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="commentaire" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Galeries" Relationship="ConservationModel.FK__Galeries__evenem__276EDEB3" FromRole="Evenements" ToRole="Galeries" />
+        </EntityType>
+        <EntityType Name="Galery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="photo" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="evenement" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Evenement1" Relationship="ConservationModel.FK__Galeries__evenem__276EDEB3" FromRole="Galeries" ToRole="Evenements" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="telephone" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="objet" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="message1" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="NatureDocument">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nature" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="ConservationModel.FK__Documents__natur__1FCDBCEB" FromRole="NatureDocuments" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="Universite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nomUniversite" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="ConservationModel.FK__Documents__unive__1CF15040" FromRole="Universites" ToRole="Documents" />
+        </EntityType>
+        <Association Name="FK__Documents__diplo__1DE57479">
+          <End Role="Diplomes" Type="ConservationModel.Diplome" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Diplomes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="diplome" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DocumentP__titre__22AA2996">
+          <End Role="Documents" Type="ConservationModel.Document" Multiplicity="1" />
+          <End Role="DocumentPubliers" Type="ConservationModel.DocumentPublier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DocumentPubliers">
+              <PropertyRef Name="titre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__domai__1ED998B2">
+          <End Role="DomaineFormations" Type="ConservationModel.DomaineFormation" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomaineFormations">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="domaine" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__natur__1FCDBCEB">
+          <End Role="NatureDocuments" Type="ConservationModel.NatureDocument" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NatureDocuments">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="nature" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__nomAu__1BFD2C07">
+          <End Role="Etudiants" Type="ConservationModel.Etudiant" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etudiants">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="nomAuteur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documents__unive__1CF15040">
+          <End Role="Universites" Type="ConservationModel.Universite" Multiplicity="1" />
+          <End Role="Documents" Type="ConservationModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Universites">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="universite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Galeries__evenem__276EDEB3">
+          <End Role="Evenements" Type="ConservationModel.Evenement" Multiplicity="1" />
+          <End Role="Galeries" Type="ConservationModel.Galery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Evenements">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Galeries">
+              <PropertyRef Name="evenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConservationModelStoreContainer" CdmEntityContainer="ConservationEntities">
+          <EntitySetMapping Name="Administrateurs">
+            <EntityTypeMapping TypeName="ConservationModel.Administrateur">
+              <MappingFragment StoreEntitySet="Administrateurs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="sexe" ColumnName="sexe" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diplomes">
+            <EntityTypeMapping TypeName="ConservationModel.Diplome">
+              <MappingFragment StoreEntitySet="Diplomes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="niveau" ColumnName="niveau" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentPubliers">
+            <EntityTypeMapping TypeName="ConservationModel.DocumentPublier">
+              <MappingFragment StoreEntitySet="DocumentPubliers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="ConservationModel.Document">
+              <MappingFragment StoreEntitySet="Documents">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="nomAuteur" ColumnName="nomAuteur" />
+                <ScalarProperty Name="universite" ColumnName="universite" />
+                <ScalarProperty Name="diplome" ColumnName="diplome" />
+                <ScalarProperty Name="domaine" ColumnName="domaine" />
+                <ScalarProperty Name="nature" ColumnName="nature" />
+                <ScalarProperty Name="annee" ColumnName="annee" />
+                <ScalarProperty Name="fichier" ColumnName="fichier" />
+                <ScalarProperty Name="etatPublication" ColumnName="etatPublication" />
+                <ScalarProperty Name="autoriseTelecharge" ColumnName="autoriseTelecharge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DomaineFormations">
+            <EntityTypeMapping TypeName="ConservationModel.DomaineFormation">
+              <MappingFragment StoreEntitySet="DomaineFormations">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nomDomaine" ColumnName="nomDomaine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Etudiants">
+            <EntityTypeMapping TypeName="ConservationModel.Etudiant">
+              <MappingFragment StoreEntitySet="Etudiants">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sexe" ColumnName="sexe" />
+                <ScalarProperty Name="nationalite" ColumnName="nationalite" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Evenements">
+            <EntityTypeMapping TypeName="ConservationModel.Evenement">
+              <MappingFragment StoreEntitySet="Evenements">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="titreEvenement" ColumnName="titreEvenement" />
+                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Galeries">
+            <EntityTypeMapping TypeName="ConservationModel.Galery">
+              <MappingFragment StoreEntitySet="Galeries">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="evenement" ColumnName="evenement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="ConservationModel.Message">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="objet" ColumnName="objet" />
+                <ScalarProperty Name="message1" ColumnName="message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NatureDocuments">
+            <EntityTypeMapping TypeName="ConservationModel.NatureDocument">
+              <MappingFragment StoreEntitySet="NatureDocuments">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nature" ColumnName="nature" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Universites">
+            <EntityTypeMapping TypeName="ConservationModel.Universite">
+              <MappingFragment StoreEntitySet="Universites">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nomUniversite" ColumnName="nomUniversite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

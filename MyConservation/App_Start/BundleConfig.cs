@@ -42,6 +42,7 @@ namespace MyConservation
                 "~/Assets/css/bootstrap.css",
                 "~/Assets/css/fontawesome.css",
                 "~/Assets/css/datepicker.css",
+                "~/Assets/css/all.css",
                 "~/Assets/css/styles.css"
                 ));
             bundles.Add(new ScriptBundle("~/Assets/js").Include(

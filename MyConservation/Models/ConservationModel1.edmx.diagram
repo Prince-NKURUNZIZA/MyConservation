@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="811867ec475543239b5d45d42abfb0f5" Name="Diagramme1">
+        <EntityTypeShape EntityType="ConservationModel.Administrateur" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.Diplome" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.DocumentPublier" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.Document" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.DomaineFormation" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.Etudiant" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.Evenement" Width="1.5" PointX="5.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.Galery" Width="1.5" PointX="8" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.Message" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.NatureDocument" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConservationModel.Universite" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="ConservationModel.FK__Documents__diplo__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="ConservationModel.FK__DocumentP__titre__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="ConservationModel.FK__Documents__domai__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="ConservationModel.FK__Documents__natur__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="ConservationModel.FK__Documents__nomAu__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="ConservationModel.FK__Documents__unive__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="ConservationModel.FK__Galeries__evenem__276EDEB3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

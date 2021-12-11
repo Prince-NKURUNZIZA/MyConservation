@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConservationModelStoreContainer" CdmEntityContainer="ConservationEntities">
+    <EntitySetMapping Name="Administrateurs">
+      <EntityTypeMapping TypeName="ConservationModel.Administrateur">
+        <MappingFragment StoreEntitySet="Administrateurs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="sexe" ColumnName="sexe" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diplomes">
+      <EntityTypeMapping TypeName="ConservationModel.Diplome">
+        <MappingFragment StoreEntitySet="Diplomes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="niveau" ColumnName="niveau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentPubliers">
+      <EntityTypeMapping TypeName="ConservationModel.DocumentPublier">
+        <MappingFragment StoreEntitySet="DocumentPubliers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titre" ColumnName="titre" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="ConservationModel.Document">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titre" ColumnName="titre" />
+          <ScalarProperty Name="nomAuteur" ColumnName="nomAuteur" />
+          <ScalarProperty Name="universite" ColumnName="universite" />
+          <ScalarProperty Name="diplome" ColumnName="diplome" />
+          <ScalarProperty Name="domaine" ColumnName="domaine" />
+          <ScalarProperty Name="nature" ColumnName="nature" />
+          <ScalarProperty Name="annee" ColumnName="annee" />
+          <ScalarProperty Name="fichier" ColumnName="fichier" />
+          <ScalarProperty Name="etatPublication" ColumnName="etatPublication" />
+          <ScalarProperty Name="autoriseTelecharge" ColumnName="autoriseTelecharge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DomaineFormations">
+      <EntityTypeMapping TypeName="ConservationModel.DomaineFormation">
+        <MappingFragment StoreEntitySet="DomaineFormations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomDomaine" ColumnName="nomDomaine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Etudiants">
+      <EntityTypeMapping TypeName="ConservationModel.Etudiant">
+        <MappingFragment StoreEntitySet="Etudiants">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sexe" ColumnName="sexe" />
+          <ScalarProperty Name="nationalite" ColumnName="nationalite" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evenements">
+      <EntityTypeMapping TypeName="ConservationModel.Evenement">
+        <MappingFragment StoreEntitySet="Evenements">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titreEvenement" ColumnName="titreEvenement" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galeries">
+      <EntityTypeMapping TypeName="ConservationModel.Galery">
+        <MappingFragment StoreEntitySet="Galeries">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="evenement" ColumnName="evenement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="ConservationModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="objet" ColumnName="objet" />
+          <ScalarProperty Name="message1" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NatureDocuments">
+      <EntityTypeMapping TypeName="ConservationModel.NatureDocument">
+        <MappingFragment StoreEntitySet="NatureDocuments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nature" ColumnName="nature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Universites">
+      <EntityTypeMapping TypeName="ConservationModel.Universite">
+        <MappingFragment StoreEntitySet="Universites">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomUniversite" ColumnName="nomUniversite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
