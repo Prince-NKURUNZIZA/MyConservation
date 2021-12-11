@@ -170,6 +170,7 @@
     <Compile Include="Controllers\DomaineFormationController.cs" />
     <Compile Include="Controllers\EtudiantController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NatureDocumentController.cs" />
     <Compile Include="Controllers\UniversiteController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -424,6 +425,11 @@
     <Content Include="Views\DomaineFormation\Create.cshtml" />
     <Content Include="Views\DomaineFormation\Edit.cshtml" />
     <Content Include="Views\DomaineFormation\Delete.cshtml" />
+    <Content Include="Views\NatureDocument\Index.cshtml" />
+    <Content Include="Views\NatureDocument\Details.cshtml" />
+    <Content Include="Views\NatureDocument\Create.cshtml" />
+    <Content Include="Views\NatureDocument\Edit.cshtml" />
+    <Content Include="Views\NatureDocument\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
