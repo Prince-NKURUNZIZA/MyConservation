@@ -38,6 +38,14 @@ namespace MyConservation
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+            bundles.Add(new StyleBundle("~/Assets/css").Include(
+                "~/Assets/css/bootstrap.css",
+                "~/Assets/css/fontawesome.css",
+                "~/Assets/css/datepicker.css",
+                "~/Assets/css/styles.css"
+                ));
+
+
         }
     }
 }

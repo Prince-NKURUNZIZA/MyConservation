@@ -180,6 +180,7 @@
     <Content Include="Assets\css\datepicker.css" />
     <Content Include="Assets\css\datepicker3.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\fontawesome.css" />
     <Content Include="Assets\css\styles.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
