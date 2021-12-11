@@ -166,6 +166,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministrateurController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DiplomeController.cs" />
     <Compile Include="Controllers\EtudiantController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UniversiteController.cs" />
@@ -412,6 +413,11 @@
     <Content Include="Views\Universite\Create.cshtml" />
     <Content Include="Views\Universite\Edit.cshtml" />
     <Content Include="Views\Universite\Delete.cshtml" />
+    <Content Include="Views\Diplome\Index.cshtml" />
+    <Content Include="Views\Diplome\Details.cshtml" />
+    <Content Include="Views\Diplome\Create.cshtml" />
+    <Content Include="Views\Diplome\Edit.cshtml" />
+    <Content Include="Views\Diplome\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
