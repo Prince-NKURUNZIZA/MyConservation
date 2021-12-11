@@ -44,7 +44,15 @@ namespace MyConservation
                 "~/Assets/css/datepicker.css",
                 "~/Assets/css/styles.css"
                 ));
-
+            bundles.Add(new ScriptBundle("~/Assets/js").Include(
+            "~/Assets/js/jquery-1.11.1.js",
+             "~/Assets/js/bootstrap.js",
+            "~/Assets/js/chart.js",
+            "~/Assets/js/chart-data.js",
+            "~/Assets/js/easypiechart.js",
+            "~/Assets/js/easypiechart-data.js",
+            "~/Assets/js/bootstrap-datepicker.js",
+            "~/Assets/js/custom.js"));
 
         }
     }

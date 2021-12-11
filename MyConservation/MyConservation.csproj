@@ -188,11 +188,13 @@
     <Content Include="Assets\js\bootstrap.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\chart-data.js" />
+    <Content Include="Assets\js\chart.js" />
     <Content Include="Assets\js\chart.min.js" />
     <Content Include="Assets\js\custom.js" />
     <Content Include="Assets\js\easypiechart-data.js" />
     <Content Include="Assets\js\easypiechart.js" />
     <Content Include="Assets\js\html5shiv.min.js" />
+    <Content Include="Assets\js\jquery-1.11.1.js" />
     <Content Include="Assets\js\jquery-1.11.1.min.js" />
     <Content Include="Assets\js\lumino.glyphs.js" />
     <Content Include="Assets\js\npm.js" />
