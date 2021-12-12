@@ -5,6 +5,11 @@ body {
   color: #444444;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+#Acc {
+    color:white;
+    background-color:#2E8B57;
+}
+
 p {
   color: #777; }
 
@@ -758,7 +763,7 @@ a.label:hover, a.label:focus {
   padding: 0;
   display: none;
   box-shadow: none;
-  background: #fff; }
+  background: #2E8B57; }
 
 .sidebar ul {
   margin: 20px 0px; }
@@ -811,7 +816,7 @@ a.label:hover, a.label:focus {
 .sidebar ul.nav ul.children li a {
   height: 40px;
   background: #f1f4f7;
-  color: #444444; }
+  color:#FFFFFF; }
 
 .sidebar ul.nav li.current a {
   background-color: #30a5ff;
