@@ -9,7 +9,13 @@ body {
     color:white;
     background-color:#2E8B57;
 }
-
+#pagetitre {
+    color:white;
+    background-color:#00BFFF;
+}
+#menuprincipale {
+    color:white;
+}
 p {
   color: #777; }
 
