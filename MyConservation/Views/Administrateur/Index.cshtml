@@ -16,9 +16,10 @@
 <p>
     @Html.ActionLink("+Nouveau Administrateur", "Create")
 </p>
-<table>
+<table class="table table-striped">
+    <thead >
     <tr>
-        <th>Id</th>
+        <th>#</th>
         <th>
             Nom
         </th>
@@ -42,7 +43,8 @@
         </th>
         <th>Actions</th>
     </tr>
-
+        </thead>
+    <tbody>
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -70,12 +72,13 @@
             @Html.DisplayFor(modelItem => item.password)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-info"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-warning"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @class="btn btn-danger"})
         </td>
     </tr>
 }
+        </tbody>
 
 </table>
     </div>
