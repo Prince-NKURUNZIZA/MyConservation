@@ -18,32 +18,36 @@
 </p>
 <table>
     <tr>
+        <th>Id</th>
         <th>
-            @Html.DisplayNameFor(model => model.nom)
+            Nom
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.prenom)
+            Prenom
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.adresse)
+           Adresse
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+           Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.telephone)
+           Telephone
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sexe)
+            Sexe
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.password)
+            Password
         </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.nom)
         </td>
