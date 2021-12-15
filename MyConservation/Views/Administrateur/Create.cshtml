@@ -5,56 +5,59 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Create</h2>
+<h1 id="Acc">Créer un administrateur</h1>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
+    
     <fieldset>
-        <legend>Administrateur</legend>
+       <form >
+  
+        <legend >Administrateur</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nom)
+        <div class="form-label">
+            Nom
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.nom)
             @Html.ValidationMessageFor(model => model.nom)
         </div>
+      
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.prenom)
+        <div class="form-label">
+            Prenom
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.prenom)
             @Html.ValidationMessageFor(model => model.prenom)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.adresse)
+        <div class="form-label">
+            Adresse
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.adresse)
             @Html.ValidationMessageFor(model => model.adresse)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.email)
+        <div class="form-label">
+            Email
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.email)
             @Html.ValidationMessageFor(model => model.email)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.telephone)
+        <div class="form-label">
+            Telephone
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
             @Html.ValidationMessageFor(model => model.telephone)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.sexe)
+        <div class="form-label">
+            Sexe
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.sexe)
@@ -72,6 +75,7 @@
         <p>
             <input type="submit" value="Create" />
         </p>
+        </form>
     </fieldset>
 }
 
