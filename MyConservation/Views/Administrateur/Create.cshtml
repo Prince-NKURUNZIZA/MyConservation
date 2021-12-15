@@ -5,81 +5,59 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h1 id="Acc">Créer un administrateur</h1>
+<h1 id="Acc">Créer un nouveau Administrateur</h1>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     
     <fieldset>
-       <form >
+      <form class="row g-3">
   
         <legend >Administrateur</legend>
 
-        <div class="form-label">
-            Nom
+           <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Nom</label>
+               <input id="Text1" type="text" class="form-control" name="nom" required/>
+          
+           @Html.ValidationMessageFor(model => model.nom) 
+
+  <label for="inputEmail4" class="form-label">Prenom</label>
+               <input  type="text" class="form-control" name="prenom" required/>
+          
+           @Html.ValidationMessageFor(model => model.prenom) 
+               <label for="inputEmail4" class="form-label">Adresse</label>
+               <input  type="text" class="form-control" name="adresse" required/>
+          
+           @Html.ValidationMessageFor(model => model.adresse) 
+               <label for="inputEmail4" class="form-label">Email</label>
+               <input  type="text" class="form-control" name="email" required/>
+          
+           @Html.ValidationMessageFor(model => model.email) 
+<label for="inputEmail4" class="form-label">Telephone</label>
+               <input  type="text" class="form-control" name="telephone" required/>
+          
+           @Html.ValidationMessageFor(model => model.telephone) 
+               <label for="inputEmail4" class="form-label">Sexe</label>
+               <select name="sexe" required>
+                   <option value="M">M</option>
+                   <option value="F">F</option>
+               </select>
+          
+           @Html.ValidationMessageFor(model => model.sexe) <br />
+               <label for="inputEmail4" class="form-label">Mot de Passe</label>
+               <input  type="text" class="form-control" name="password" required/>
+          
+           @Html.ValidationMessageFor(model => model.password) <br /> <br />
+        <button type="submit" value="Create" class="btn btn-info">Créer</button>
+
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.nom)
-            @Html.ValidationMessageFor(model => model.nom)
-        </div>
+          <div>
+    @Html.ActionLink("Retour à la liste", "Index")
+</div>
       
 
-        <div class="form-label">
-            Prenom
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.prenom)
-            @Html.ValidationMessageFor(model => model.prenom)
-        </div>
-
-        <div class="form-label">
-            Adresse
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.adresse)
-            @Html.ValidationMessageFor(model => model.adresse)
-        </div>
-
-        <div class="form-label">
-            Email
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.email)
-            @Html.ValidationMessageFor(model => model.email)
-        </div>
-
-        <div class="form-label">
-            Telephone
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.telephone)
-            @Html.ValidationMessageFor(model => model.telephone)
-        </div>
-
-        <div class="form-label">
-            Sexe
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.sexe)
-            @Html.ValidationMessageFor(model => model.sexe)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.password)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.password)
-            @Html.ValidationMessageFor(model => model.password)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
         </form>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
     </div>
