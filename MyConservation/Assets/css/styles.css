@@ -5,6 +5,12 @@ body {
   color: #444444;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+.nouveau {
+    color:white;
+    background-color:red;
+    height:30px;
+    width:230px;
+}
 #Acc {
     color:white;
     background-color:#2E8B57;
