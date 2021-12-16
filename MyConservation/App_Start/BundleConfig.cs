@@ -54,6 +54,18 @@ namespace MyConservation
             "~/Assets/js/easypiechart-data.js",
             "~/Assets/js/bootstrap-datepicker.js",
             "~/Assets/js/custom.js"));
+            bundles.Add(new ScriptBundle("~/Assets2/css").Include(
+                "~/Assets2/css/bootstrap.css",
+                "~/Assets2/css/bootstrap-theme.css",
+                "~/Assets2/css/font-awesome.css",
+                "~/Assets2/css/main.css"
+                
+                ));
+            bundles.Add(new ScriptBundle("~/Assets2/js").Include(
+                "~/Assets2/js/headroom.js",
+                "~/Assets2/js/jQuery.headroom.js",
+                "~/Assets2/js/template.js"
+                ));
 
         }
     }

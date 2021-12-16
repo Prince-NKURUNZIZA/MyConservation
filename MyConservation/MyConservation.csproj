@@ -171,6 +171,7 @@
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\DocumentPublierController.cs" />
     <Compile Include="Controllers\DomaineFormationController.cs" />
+    <Compile Include="Controllers\EtudiantClientController.cs" />
     <Compile Include="Controllers\EtudiantController.cs" />
     <Compile Include="Controllers\EvenementController.cs" />
     <Compile Include="Controllers\GalerieController.cs" />
@@ -235,7 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets2\css\bootstrap-theme.css" />
+    <Content Include="Assets2\css\bootstrap.css" />
     <Content Include="Assets2\css\bootstrap.min.css" />
+    <Content Include="Assets2\css\font-awesome.css" />
     <Content Include="Assets2\css\font-awesome.min.css" />
     <Content Include="Assets2\css\main.css" />
     <Content Include="Assets2\fonts\fontawesome-webfont.svg" />
@@ -249,8 +252,10 @@
     <Content Include="Assets2\images\mac.jpg" />
     <Content Include="Assets2\images\Page.jpg" />
     <Content Include="Assets2\js\google-map.js" />
+    <Content Include="Assets2\js\headroom.js" />
     <Content Include="Assets2\js\headroom.min.js" />
     <Content Include="Assets2\js\html5shiv.js" />
+    <Content Include="Assets2\js\jQuery.headroom.js" />
     <Content Include="Assets2\js\jQuery.headroom.min.js" />
     <Content Include="Assets2\js\respond.min.js" />
     <Content Include="Assets2\js\template.js" />
@@ -490,6 +495,11 @@
     <Content Include="Views\PartialsClient\_Footer.cshtml" />
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Views\LayoutsClient\_Default.cshtml" />
+    <Content Include="Views\EtudiantClient\Index.cshtml" />
+    <Content Include="Views\EtudiantClient\Details.cshtml" />
+    <Content Include="Views\EtudiantClient\Create.cshtml" />
+    <Content Include="Views\EtudiantClient\Edit.cshtml" />
+    <Content Include="Views\EtudiantClient\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
