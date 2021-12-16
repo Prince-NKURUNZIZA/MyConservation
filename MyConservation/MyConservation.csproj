@@ -461,6 +461,8 @@
     <Content Include="Views\Message\Edit.cshtml" />
     <Content Include="Views\Message\Delete.cshtml" />
     <Content Include="Views\PartialsClient\_Head.cshtml" />
+    <Content Include="Views\PartialsClient\_Navbar.cshtml" />
+    <Content Include="Views\PartialsClient\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
