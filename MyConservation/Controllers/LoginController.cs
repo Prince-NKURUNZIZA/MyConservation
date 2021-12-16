@@ -6,16 +6,15 @@ using System.Web.Mvc;
 
 namespace MyConservation.Controllers
 {
-    public class ClientController : Controller
+    public class LoginController : Controller
     {
         //
-        // GET: /Client/
+        // GET: /Login/
 
         public ActionResult Index()
         {
             return View();
         }
-       
 
     }
 }
