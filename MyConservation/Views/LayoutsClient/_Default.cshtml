@@ -1,7 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
+    @RenderPage("~/Views/PartialsClient/_Head.cshtml")
 <body class="home">
+    @RenderPage("~/Views/PartialsClient/_Navbar.cshtml")
+
+    @RenderBody()
+
+    @RenderPage("~/Views/PartialsClient/_Footer.cshtml")
   <script src="Assets2/js/headroom.min.js"></script>
 	<script src="Assets2/js/jQuery.headroom.min.js"></script>
 	<script src="Assets2/js/template.js"></script>

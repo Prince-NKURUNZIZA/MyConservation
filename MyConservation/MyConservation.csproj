@@ -234,6 +234,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets2\css\bootstrap-theme.css" />
+    <Content Include="Assets2\css\bootstrap.min.css" />
+    <Content Include="Assets2\css\font-awesome.min.css" />
+    <Content Include="Assets2\css\main.css" />
+    <Content Include="Assets2\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets2\images\1.jpg" />
+    <Content Include="Assets2\images\2.jpg" />
+    <Content Include="Assets2\images\bg_header.jpg" />
+    <Content Include="Assets2\images\gt_favicon.png" />
+    <Content Include="Assets2\images\header.jpg" />
+    <Content Include="Assets2\images\logo.png" />
+    <Content Include="Assets2\images\logo2.png" />
+    <Content Include="Assets2\images\mac.jpg" />
+    <Content Include="Assets2\images\Page.jpg" />
+    <Content Include="Assets2\js\google-map.js" />
+    <Content Include="Assets2\js\headroom.min.js" />
+    <Content Include="Assets2\js\html5shiv.js" />
+    <Content Include="Assets2\js\jQuery.headroom.min.js" />
+    <Content Include="Assets2\js\respond.min.js" />
+    <Content Include="Assets2\js\template.js" />
     <Content Include="Assets\css\bootstrap-table.css" />
     <Content Include="Assets\css\bootstrap-theme.css" />
     <Content Include="Assets\css\bootstrap-theme.min.css" />
@@ -347,6 +367,10 @@
       <DependentUpon>ConservationModel1.edmx</DependentUpon>
       <LastGenOutput>ConservationModel1.cs</LastGenOutput>
     </Content>
+    <Content Include="Assets2\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets2\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets2\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets2\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
