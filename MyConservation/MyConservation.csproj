@@ -465,6 +465,7 @@
     <Content Include="Views\PartialsClient\_Navbar.cshtml" />
     <Content Include="Views\PartialsClient\_Footer.cshtml" />
     <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\LayoutsClient\_Default.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
