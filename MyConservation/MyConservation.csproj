@@ -165,6 +165,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministrateurController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DiplomeController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
@@ -463,6 +464,7 @@
     <Content Include="Views\PartialsClient\_Head.cshtml" />
     <Content Include="Views\PartialsClient\_Navbar.cshtml" />
     <Content Include="Views\PartialsClient\_Footer.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
