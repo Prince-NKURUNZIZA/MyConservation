@@ -16,8 +16,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">Registration</li>
+			<li><a href="index.html">Acceuil</a></li>
+			
 		</ol>
 
 		<div class="row">
@@ -25,38 +25,53 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Registration</h1>
+					<h1 class="page-title">Créer compte</h1>
 				</header>
 				
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3 class="thin text-center">Register a new account</h3>
-							<p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="signin.html">Login</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
+							<h3 class="thin text-center">Créer un nouveau compte</h3>
+							<p class="text-center text-muted">Si vous avez déjà un compte, <a href="@Url.Action("Index","Login")">Se connecter</a> pour accéder sur votre compte </p>
 							<hr>
 
 							<form>
 								<div class="top-margin">
-									<label>First Name</label>
-									<input type="text" class="form-control">
+									<label>Nom</label>
+									<input type="text" name="nom" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.nom)
 								</div>
 								<div class="top-margin">
-									<label>Last Name</label>
-									<input type="text" class="form-control">
+									<label>Prenom</label>
+									<input type="text" name="prenom" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.prenom)
+								</div>
+                                <div class="top-margin">
+									<label>Adresse</label>
+									<input type="text" name="adresse" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.adresse)
 								</div>
 								<div class="top-margin">
-									<label>Email Address <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<label>Email  <span class="text-danger">*</span></label>
+									<input type="email" name="email" class="form-control">
+                                    @Html.ValidationMessageFor(model => model.email)
+								</div>
+                                <div class="top-margin">
+									<label>Sexe</label>
+									<input type="text" name="sexe" class="form-control">
+                                    @Html.ValidationMessageFor(model => model.sexe)
 								</div>
 
 								<div class="row top-margin">
 									<div class="col-sm-6">
-										<label>Password <span class="text-danger">*</span></label>
-										<input type="text" class="form-control">
+										<label>Nationalite <span class="text-danger">*</span></label>
+										<input type="text" name="nationalite" class="form-control">
+                                        @Html.ValidationMessageFor(model => model.nationalite)
 									</div>
 									<div class="col-sm-6">
-										<label>Confirm Password <span class="text-danger">*</span></label>
-										<input type="text" class="form-control">
+										<label>Password <span class="text-danger">*</span></label>
+										<input type="text" name="password" class="form-control">
+                                        @Html.ValidationMessageFor(model => model.password)
 									</div>
 								</div>
 
@@ -66,11 +81,11 @@
 									<div class="col-lg-8">
 										<label class="checkbox">
 											<input type="checkbox"> 
-											I've read the <a href="page_terms.html">Terms and Conditions</a>
+											 <a href="page_terms.html">Accepter nos conditions</a>
 										</label>                        
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
+										<button class="btn btn-action" type="submit" value="Create">Créer</button>
 									</div>
 								</div>
 							</form>

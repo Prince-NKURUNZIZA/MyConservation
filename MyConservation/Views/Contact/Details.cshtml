@@ -1,0 +1,51 @@
+﻿@model MyConservation.Models.Message
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/LayoutsClient/_Default.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Message</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nom)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nom)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telephone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telephone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.objet)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.objet)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.message1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.message1)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
