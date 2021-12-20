@@ -34,29 +34,37 @@
 				<br>
 					<form>
 						<div class="row">
-							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Name">
+							<div class="col-sm-3">
+								<input class="form-control" name="nom" type="text" placeholder="votre nom">
+                                @Html.ValidationMessageFor(model => model.nom)
 							</div>
-							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Email">
+							<div class="col-sm-3">
+								<input class="form-control" name="email" type="text" placeholder="votre email">
+                                @Html.ValidationMessageFor(model => model.email)
 							</div>
-							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Phone">
+							<div class="col-sm-3">
+								<input class="form-control" name="telephone" type="text" placeholder="Phone">
+                                 @Html.ValidationMessageFor(model => model.telephone)
 							</div>
 						</div>
+                        <div class="col-sm-3">
+								<input class="form-control" name="objet" type="text" placeholder="objet">
+                                 @Html.ValidationMessageFor(model => model.objet)
+							</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-12">
-								<textarea placeholder="Type your message here..." class="form-control" rows="9"></textarea>
+								<textarea placeholder="Type your message here..." name="message1" class="form-control" rows="9"></textarea>
+                                 @Html.ValidationMessageFor(model => model.message1)
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-6">
-								<label class="checkbox"><input type="checkbox"> Sign up for newsletter</label>
+								
 							</div>
 							<div class="col-sm-6 text-right">
-								<input class="btn btn-action" type="submit" value="Send message">
+								<input class="btn btn-action" type="submit" value="Create">
 							</div>
 						</div>
 					</form>
