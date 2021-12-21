@@ -1,0 +1,23 @@
+﻿@model MyConservation.Models.DomaineFormation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/LayoutsClient/_Default.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DomaineFormation</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nomDomaine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nomDomaine)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
