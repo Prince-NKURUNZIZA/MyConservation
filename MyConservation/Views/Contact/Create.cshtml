@@ -16,8 +16,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">About</li>
+			<li><a href="@Url.Action("Index","Client")">Acceuil</a></li>
+			
 		</ol>
 
 		<div class="row">
@@ -25,36 +25,36 @@
 			<!-- Article main content -->
 			<article class="col-sm-9 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Contact us</h1>
+					<h1 class="page-title">Contact nous</h1>
 				</header>
 				
 				<p>
-					We’d love to hear from you. Interested in working together? Fill out the form below with some info about your project and I will get back to you as soon as I can. Please allow a couple days for me to respond.
+					Envoye vos messages, vos suggestions ou dans l'initiative de nous soutenir
 				</p>
 				<br>
 					<form>
 						<div class="row">
-							<div class="col-sm-3">
-								<input class="form-control" name="nom" type="text" placeholder="votre nom">
+							<div class="col-sm-4">
+								<input class="form-control" name="nom" type="text" placeholder="votre nom" required>
                                 @Html.ValidationMessageFor(model => model.nom)
 							</div>
-							<div class="col-sm-3">
-								<input class="form-control" name="email" type="text" placeholder="votre email">
+							<div class="col-sm-4">
+								<input class="form-control" name="email" type="text" placeholder="votre email" required>
                                 @Html.ValidationMessageFor(model => model.email)
 							</div>
-							<div class="col-sm-3">
-								<input class="form-control" name="telephone" type="text" placeholder="Phone">
+							<div class="col-sm-4">
+								<input class="form-control" name="telephone" type="text" placeholder="Votre telephone" required>
                                  @Html.ValidationMessageFor(model => model.telephone)
 							</div>
-						</div>
-                        <div class="col-sm-3">
-								<input class="form-control" name="objet" type="text" placeholder="objet">
+						</div> <br />
+                        <div class="col-sm-4">
+								<input class="form-control" name="objet" type="text" placeholder="objet" required>
                                  @Html.ValidationMessageFor(model => model.objet)
-							</div>
+							</div><br />
 						<br>
 						<div class="row">
 							<div class="col-sm-12">
-								<textarea placeholder="Type your message here..." name="message1" class="form-control" rows="9"></textarea>
+								<textarea placeholder="Ecrit votre message ici..." name="message1" class="form-control" rows="9" required></textarea>
                                  @Html.ValidationMessageFor(model => model.message1)
 							</div>
 						</div>
@@ -64,7 +64,7 @@
 								
 							</div>
 							<div class="col-sm-6 text-right">
-								<input class="btn btn-action" type="submit" value="Create">
+								<input class="btn btn-action" type="submit" value="Envoyer">
 							</div>
 						</div>
 					</form>
@@ -78,11 +78,13 @@
 				<div class="widget">
 					<h4>Address</h4>
 					<address>
-						2002 Holcombe Boulevard, Houston, TX 77030, USA
+					102 av de l'agriculture, Bujumbura-Gihosha
 					</address>
-					<h4>Phone:</h4>
+					<h4>Telephone:</h4>
 					<address>
-						(713) 791-1414
+						+257 71013023 <br />
+                        +257 61124087
+
 					</address>
 				</div>
 
