@@ -58,9 +58,31 @@ namespace MyConservation.Controllers
             return View(etudiant);
         }
 
+        [HttpGet]
+
         public ActionResult Login()
         {
             return View();
+        }
+
+    [HttpPost]
+
+        public ActionResult Login(Etudiant etudiant)
+        {
+            var obj = db.Etudiants.Where(x => x.email.Equals(etudiant.email) && x.password.Equals(etudiant.password)).FirstOrDefault();
+        if(obj != null){
+            return RedirectToAction("Index","Client");
+        }
+        else if (etudiant.email == "nkrnzzprince@gmail.com" && etudiant.password == "123")
+        {
+
+            return RedirectToAction("Create");
+        }
+        else {
+
+            
+        }
+        return View();
         }
         //
         // GET: /EtudiantClient/Edit/5
