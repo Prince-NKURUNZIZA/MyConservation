@@ -52,12 +52,16 @@ namespace MyConservation.Controllers
             {
                 db.Etudiants.Add(etudiant);
                 db.SaveChanges();
-                return RedirectToAction("Index","Login");
+                return RedirectToAction("Login");
             }
 
             return View(etudiant);
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
         //
         // GET: /EtudiantClient/Edit/5
 
