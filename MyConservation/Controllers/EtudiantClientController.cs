@@ -52,7 +52,7 @@ namespace MyConservation.Controllers
             {
                 db.Etudiants.Add(etudiant);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Login");
             }
 
             return View(etudiant);
