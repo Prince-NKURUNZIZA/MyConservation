@@ -64,7 +64,8 @@ namespace MyConservation
             bundles.Add(new ScriptBundle("~/Assets2/js").Include(
                 "~/Assets2/js/headroom.js",
                 "~/Assets2/js/jQuery.headroom.js",
-                "~/Assets2/js/template.js"
+                "~/Assets2/js/template.js",
+                "~/Assets2/js/Script.js"
                 ));
 
         }

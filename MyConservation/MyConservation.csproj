@@ -261,6 +261,7 @@
     <Content Include="Assets2\js\jQuery.headroom.js" />
     <Content Include="Assets2\js\jQuery.headroom.min.js" />
     <Content Include="Assets2\js\respond.min.js" />
+    <Content Include="Assets2\js\Script.js" />
     <Content Include="Assets2\js\template.js" />
     <Content Include="Assets\css\bootstrap-table.css" />
     <Content Include="Assets\css\bootstrap-theme.css" />

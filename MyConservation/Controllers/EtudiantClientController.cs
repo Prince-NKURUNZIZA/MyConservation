@@ -73,13 +73,11 @@ namespace MyConservation.Controllers
         if(obj != null){
             return RedirectToAction("Index","Client");
         }
-        else if (etudiant.email == "nkrnzzprince@gmail.com" && etudiant.password == "123")
-        {
-
-            return RedirectToAction("Create");
-        }
+       
         else {
-
+            
+            return Content("<script language='javascript' type='text/javascript'>alert('Aucun compte correspond à votre authentification');</script>");
+            return RedirectToAction("Login", "EtudiantClient");
             
         }
         return View();
@@ -143,4 +141,6 @@ namespace MyConservation.Controllers
             base.Dispose(disposing);
         }
     }
+   
 }
+ 
