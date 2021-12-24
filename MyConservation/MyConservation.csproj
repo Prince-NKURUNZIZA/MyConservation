@@ -516,6 +516,10 @@
     <Content Include="Views\Domaine\Edit.cshtml" />
     <Content Include="Views\Domaine\Delete.cshtml" />
     <Content Include="Views\EtudiantClient\Login.cshtml" />
+    <Content Include="Views\PartialsEtudiant\_Footer.cshtml" />
+    <Content Include="Views\PartialsEtudiant\_Head.cshtml" />
+    <Content Include="Views\PartialsEtudiant\_Navbar.cshtml" />
+    <Content Include="Views\LayoutsEtudiant\_Default.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
