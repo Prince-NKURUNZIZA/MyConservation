@@ -75,12 +75,11 @@ namespace MyConservation.Controllers
         }
        
         else {
+
+            return Content("<script language='javascript' type='text/javascript'>alert('Aucun compte correspond à votre authentification');</script>") ;
+           
             
-            return Content("<script language='javascript' type='text/javascript'>alert('Aucun compte correspond à votre authentification');</script>");
-            return RedirectToAction("Login", "EtudiantClient");
-            
-        }
-        return View();
+        } 
         }
         //
         // GET: /EtudiantClient/Edit/5
