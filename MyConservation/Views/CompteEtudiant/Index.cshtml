@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MyConservation.Models.Document>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/LayoutsEtudiant/_Default.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Etudiant.nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Universite1.nomUniversite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diplome1.niveau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DomaineFormation.nomDomaine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NatureDocument.nature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.annee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fichier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.etatPublication)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.autoriseTelecharge)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.titre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Etudiant.nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Universite1.nomUniversite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diplome1.niveau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DomaineFormation.nomDomaine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NatureDocument.nature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.annee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fichier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.etatPublication)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autoriseTelecharge)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
