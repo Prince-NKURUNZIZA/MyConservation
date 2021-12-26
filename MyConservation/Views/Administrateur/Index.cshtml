@@ -7,17 +7,25 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     
  <h2>Index</h2>
+    @if (TempData["AlertMessage"] != null) { 
+    
+        <div class="alert alert-success">
+     <strong>Success !</strong>   @TempData["AlertMessage"]
+
+    </div>
+    
+    }
 
     <div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header" id="Acc"><i class="fa fa-first-order" aria-hidden="true"></i>Administrateurs</h1>
 			</div>
 		</div><!--/.row-->
-<h4 class="nouveau">
+<button class="btn btn-info">
     
     @Html.ActionLink("+Nouveau Administrateur", "Create")
         
-</h4>
+</button> <br />
 <table class="table table-striped">
     <thead >
     <tr>

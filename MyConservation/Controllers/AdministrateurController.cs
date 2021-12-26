@@ -52,6 +52,7 @@ namespace MyConservation.Controllers
             {
                 db.Administrateurs.Add(administrateur);
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");
             }
 
@@ -81,6 +82,7 @@ namespace MyConservation.Controllers
             {
                 db.Entry(administrateur).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Modifié avec sucess....!";
                 return RedirectToAction("Index");
             }
             return View(administrateur);
@@ -108,6 +110,7 @@ namespace MyConservation.Controllers
             Administrateur administrateur = db.Administrateurs.Find(id);
             db.Administrateurs.Remove(administrateur);
             db.SaveChanges();
+            TempData["AlertMessage"] = "Supprimé avec sucess....!";
             return RedirectToAction("Index");
         }
 
