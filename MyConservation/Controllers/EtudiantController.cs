@@ -52,6 +52,7 @@ namespace MyConservation.Controllers
             {
                 db.Etudiants.Add(etudiant);
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");
             }
 
@@ -81,6 +82,7 @@ namespace MyConservation.Controllers
             {
                 db.Entry(etudiant).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Modifie avec sucess....!";
                 return RedirectToAction("Index");
             }
             return View(etudiant);
@@ -108,6 +110,7 @@ namespace MyConservation.Controllers
             Etudiant etudiant = db.Etudiants.Find(id);
             db.Etudiants.Remove(etudiant);
             db.SaveChanges();
+            TempData["AlertMessage"] = "Supprime avec sucess....!";
             return RedirectToAction("Index");
         }
 
