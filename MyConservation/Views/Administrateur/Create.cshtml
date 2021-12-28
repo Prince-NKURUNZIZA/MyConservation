@@ -30,7 +30,7 @@
           
            @Html.ValidationMessageFor(model => model.adresse) 
                <label for="inputEmail4" class="form-label">Email</label>
-               <input  type="text" class="form-control" name="email" required/>
+               <input  type="email" class="form-control" name="email" required/>
           
            @Html.ValidationMessageFor(model => model.email) 
 <label for="inputEmail4" class="form-label">Telephone</label>
@@ -49,6 +49,7 @@
           
            @Html.ValidationMessageFor(model => model.password) <br /> 
         <button type="submit" value="Create" class="btn btn-info">Créer</button>
+               <button type="reset" class="btn btn-danger">Annuler</button>
 
         </div>
           <div>

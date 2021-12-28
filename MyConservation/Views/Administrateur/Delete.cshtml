@@ -5,65 +5,45 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Delete</h2>
+<h1 id="Acc">Supprimer un Administrateur</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Vous avez besoin de supprimer cet administrateur?</h3>
 <fieldset>
     <legend>Administrateur</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.nom)
+        <h3> Nom : @Html.DisplayFor(model => model.nom) </h3>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.nom)
+    
+    <div class="display-label">
+       <h3> Prenom :  @Html.DisplayFor(model => model.prenom)</h3>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.prenom)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.prenom)
+     <h3>Adresse :  @Html.DisplayFor(model => model.adresse)</h3> 
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.adresse)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.adresse)
+      <h3>Email :  @Html.DisplayFor(model => model.email)</h3> 
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.email)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.email)
+     <h3>Telephone :   @Html.DisplayFor(model => model.telephone) </h3>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.telephone)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.telephone)
+      <h3>Sexe :  @Html.DisplayFor(model => model.sexe) </h3>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.sexe)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.sexe)
+    <h3>Mot de Passe :    @Html.DisplayFor(model => model.password)
     </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.password)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.password)
-    </div>
-</fieldset>
+</fieldset><br />
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <button type="submit" value="Delete" class="btn btn-danger">Supprimer</button>
+               <button type="reset" class="btn btn-info">Annuler</button>
+        @Html.ActionLink("Retour sur la liste", "Index")
     </p>
 }
 </div>

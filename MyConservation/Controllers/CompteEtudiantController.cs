@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 using MyConservation.Models;
 
 namespace MyConservation.Controllers
@@ -19,13 +20,14 @@ namespace MyConservation.Controllers
         public ActionResult Index()
         {
             var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1);
+            
+            
             return View(documents.ToList());
         }
         public ActionResult Acceuil()
         {
             return View();
         }
-
 
         //
         // GET: /CompteEtudiant/Details/5
@@ -50,6 +52,7 @@ namespace MyConservation.Controllers
             ViewBag.nature = new SelectList(db.NatureDocuments, "id", "nature");
             ViewBag.nomAuteur = new SelectList(db.Etudiants, "id", "nom");
             ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite");
+
             return View();
         }
 
@@ -57,13 +60,21 @@ namespace MyConservation.Controllers
         // POST: /CompteEtudiant/Create
 
         [HttpPost]
-        public ActionResult Create(Document document)
+        public ActionResult Create(Document document,HttpPostedFileBase docfile)
         {
             if (ModelState.IsValid)
             {
-                db.Documents.Add(document);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                string fileName = Path.GetFileName(docfile.FileName);
+               
+                    string extension = Path.GetExtension(document.docfile.FileName);
+                    document.fichier = "../Fichiers/" + fileName;
+                    fileName = Path.Combine(Server.MapPath("../Fichiers/"), fileName);
+                    document.docfile.SaveAs(fileName);
+                
+                   db.Documents.Add(document);
+                   db.SaveChanges();
+                   return RedirectToAction("Index");
+               
             }
 
             ViewBag.diplome = new SelectList(db.Diplomes, "id", "niveau", document.diplome);
@@ -73,6 +84,8 @@ namespace MyConservation.Controllers
             ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite", document.universite);
             return View(document);
         }
+
+      
 
         //
         // GET: /CompteEtudiant/Edit/5

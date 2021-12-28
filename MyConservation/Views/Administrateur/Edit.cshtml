@@ -6,7 +6,7 @@
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 
-<h2>Edit</h2>
+<h2 id="Acc">Modifier  l'Administrateur</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -17,7 +17,7 @@
         @Html.HiddenFor(model => model.id)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.nom)
+           <label for="inputEmail4" class="form-label">Nom</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.nom)
@@ -25,7 +25,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.prenom)
+           <label for="inputEmail4" class="form-label">Prenom</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.prenom)
@@ -33,7 +33,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.adresse)
+           <label for="inputEmail4" class="form-label">Adresse</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.adresse)
@@ -41,7 +41,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.email)
+           <label for="inputEmail4" class="form-label">Email</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.email)
@@ -49,7 +49,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.telephone)
+           <label for="inputEmail4" class="form-label">Telephone</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.telephone)
@@ -57,7 +57,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.sexe)
+           <label for="inputEmail4" class="form-label">Sexe</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.sexe)
@@ -65,20 +65,22 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.password)
+            <label for="inputEmail4" class="form-label">Password</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.password)
             @Html.ValidationMessageFor(model => model.password)
-        </div>
+        </div><br />
 
         <p>
-            <input type="submit" value="Save" />
+            <button type="submit" value="Save" class="btn btn-info">Modifier</button>
+               <button type="reset" class="btn btn-danger">Annuler</button>
+            
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retourner sur la liste", "Index")
 </div>
 </div>

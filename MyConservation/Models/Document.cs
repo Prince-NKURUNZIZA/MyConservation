@@ -11,6 +11,10 @@ namespace MyConservation.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+    
     
     public partial class Document
     {
@@ -27,7 +31,12 @@ namespace MyConservation.Models
         public int domaine { get; set; }
         public int nature { get; set; }
         public int annee { get; set; }
+
+        [DisplayName("upload file")]
         public string fichier { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase docfile { get; set; }
+
         public bool etatPublication { get; set; }
         public bool autoriseTelecharge { get; set; }
     

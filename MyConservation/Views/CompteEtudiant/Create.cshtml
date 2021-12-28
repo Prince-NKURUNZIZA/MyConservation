@@ -5,9 +5,13 @@
     Layout = "~/Views/LayoutsEtudiant/_Default.cshtml";
 }
 <header id="head" class="secondary"></header>
+
+
 <h2>Create</h2>
 
-@using (Html.BeginForm()) {
+
+@using (Html.BeginForm("Create","CompteEtudiant",FormMethod.Post, new {enctype="multpart/form-data" }))
+{
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -68,16 +72,17 @@
             @Html.EditorFor(model => model.annee)
             @Html.ValidationMessageFor(model => model.annee)
         </div>
-
         <div class="editor-label">
              
             @Html.LabelFor(model => model.fichier)
         </div>
-        <div class="editor-field">
-            <input type="file" name="fichier"  required>
-            @Html.ValidationMessageFor(model => model.fichier)
-        </div>
 
+        <div class="editor-field">
+        <input type="file" name="docfile" id="fichier"  required>
+        @Html.ValidationMessageFor(model => model.fichier)
+
+        </div>
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.etatPublication)
         </div>
@@ -97,8 +102,10 @@
         <p>
             <input type="submit" value="Create" />
         </p>
+    
     </fieldset>
 }
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")

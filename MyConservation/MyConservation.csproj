@@ -470,11 +470,6 @@
     <Content Include="Views\NatureDocument\Create.cshtml" />
     <Content Include="Views\NatureDocument\Edit.cshtml" />
     <Content Include="Views\NatureDocument\Delete.cshtml" />
-    <Content Include="Views\Document\Index.cshtml" />
-    <Content Include="Views\Document\Details.cshtml" />
-    <Content Include="Views\Document\Create.cshtml" />
-    <Content Include="Views\Document\Edit.cshtml" />
-    <Content Include="Views\Document\Delete.cshtml" />
     <Content Include="Views\DocumentPublier\Index.cshtml" />
     <Content Include="Views\DocumentPublier\Details.cshtml" />
     <Content Include="Views\DocumentPublier\Create.cshtml" />
@@ -530,6 +525,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Fichiers\" />
+    <Folder Include="Views\AFichiers\" />
     <Folder Include="Views\Repports\" />
   </ItemGroup>
   <ItemGroup>
