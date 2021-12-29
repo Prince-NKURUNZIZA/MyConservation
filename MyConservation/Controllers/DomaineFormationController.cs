@@ -52,6 +52,7 @@ namespace MyConservation.Controllers
             {
                 db.DomaineFormations.Add(domaineformation);
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");
             }
 
@@ -81,6 +82,7 @@ namespace MyConservation.Controllers
             {
                 db.Entry(domaineformation).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Modifié avec sucess....!";
                 return RedirectToAction("Index");
             }
             return View(domaineformation);
@@ -108,6 +110,7 @@ namespace MyConservation.Controllers
             DomaineFormation domaineformation = db.DomaineFormations.Find(id);
             db.DomaineFormations.Remove(domaineformation);
             db.SaveChanges();
+            TempData["AlertMessage"] = "Supprimé avec sucess....!";
             return RedirectToAction("Index");
         }
 

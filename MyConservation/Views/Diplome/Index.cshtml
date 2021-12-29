@@ -5,31 +5,56 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Index</h2>
+    
+ <h2>Liste des diplomes </h2>
+    @if (TempData["AlertMessage"] != null) { 
+    
+        <div class="alert alert-success">
+     <strong>Success !</strong>   @TempData["AlertMessage"]
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+    </div>
+    
+    }
+
+    <div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header" id="Acc"><i class="fa fa-first-order" aria-hidden="true"></i>Diplome</h1>
+			</div>
+		</div><!--/.row-->
+<h4 class="btn btn-success">
+    
+    @Html.ActionLink("+Nouveau Diplome", "Create")
+        
+</h4> <br /><br />
+<table class="table table-striped">
+    <thead >
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.niveau)
+            #
+        </th>
+        <th>
+            Niveau de diplome
         </th>
         <th></th>
     </tr>
-
+ </thead>
+    <tbody>
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.niveau)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                      @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-info"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-warning"}) |
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-danger"})
         </td>
     </tr>
 }
+        </tbody>
 
 </table>
-</div>
+    </div>
