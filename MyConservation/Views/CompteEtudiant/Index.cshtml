@@ -18,7 +18,7 @@
 <p>
     <h3 id="Acc">BIENVENUE DANS VOTRE ESPACE DE CONSERVATION</h3>
  Bienvenue dans votre Conservation Le site web MyConservation a pour but de Conserver un maximum des traveaux des étudiants 
-    en accès gratuit sur internet. Pour déposer votre traveau, il suffit de clique ici  @Html.ActionLink("Ajouter ton traveau", "Create")  
+    en accès gratuit sur internet. Pour déposer votre traveau, il suffit de clique ici <h5> @Html.ActionLink("Ajouter un traveau", "Create")</h5>  
     .
  Votre traveau est mis en ligne peu de temps après. 
 <h4>Préambule</h4>
@@ -30,7 +30,7 @@ Le site web MyConservation a pour but le partage des connaissances via la public
 </p> 
 <div class="row">
 			<div class="col-lg-12">
-				<h3 class="page-header" id="Acc"><i class="fa fa-first-order" aria-hidden="true"></i>Mes Documents qui sont en ligne</h3>
+				<h3 class="page-header" id="Acc"><i class="fa fa-first-order" aria-hidden="true"></i>Mes Documents qui sont en ligne :</h3>
 			</div>
 		</div>
 
@@ -42,12 +42,6 @@ Le site web MyConservation a pour but le partage des connaissances via la public
             Titre
         </th>
         
-        <th>
-            Universite
-        </th>
-        <th>
-            Diplome
-        </th>
         <th>
            Domaine
         </th>
@@ -78,12 +72,6 @@ Le site web MyConservation a pour but le partage des connaissances via la public
             @Html.DisplayFor(modelItem => item.titre)
         </td>
         
-        <td>
-            @Html.DisplayFor(modelItem => item.Universite1.nomUniversite)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Diplome1.niveau)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.DomaineFormation.nomDomaine)
         </td>

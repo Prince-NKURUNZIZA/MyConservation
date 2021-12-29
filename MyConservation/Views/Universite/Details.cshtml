@@ -5,20 +5,25 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Details</h2>
+<h2 id="Acc">Les details de l'université</h2>
 
 <fieldset>
     <legend>Universite</legend>
-
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.nomUniversite)
+         <h4>Identifiant :</h4>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id)
+    </div>
+    <div class="display-label">
+         <h4>Nom de l'universite :</h4>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.nomUniversite)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.id }, new {@class="btn btn-info" }) |
+    @Html.ActionLink("Retourne sur la liste", "Index")
 </p>
 </div>

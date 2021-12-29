@@ -31,19 +31,14 @@
 <table class="table table-striped">
     <thead >
     <tr>
-        <th>#</th>
+        
         <th>
             Titre
         </th>
         <th>
             Auteur
         </th>
-        <th>
-            Universite
-        </th>
-        <th>
-            Diplome
-        </th>
+        
         <th>
            Domaine
         </th>
@@ -69,21 +64,14 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.titre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Etudiant.nom)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Universite1.nomUniversite)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Diplome1.niveau)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.DomaineFormation.nomDomaine)
         </td>

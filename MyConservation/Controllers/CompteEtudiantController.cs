@@ -64,12 +64,7 @@ namespace MyConservation.Controllers
         {
             if (ModelState.IsValid)
             {
-                string fileName = Path.GetFileName(docfile.FileName);
-               
-                    string extension = Path.GetExtension(document.docfile.FileName);
-                    document.fichier = "../Fichiers/" + fileName;
-                    fileName = Path.Combine(Server.MapPath("../Fichiers/"), fileName);
-                    document.docfile.SaveAs(fileName);
+                
                 
                    db.Documents.Add(document);
                    db.SaveChanges();
