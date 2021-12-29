@@ -16,7 +16,10 @@
 	#head .lead { font-size: 34px; }
 }
 
-
+#Acc {
+    color:white;
+    background-color:#2E8B57;
+}
 
 
 /* Autohide navbar */

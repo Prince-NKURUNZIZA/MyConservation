@@ -5,54 +5,79 @@
     Layout = "~/Views/LayoutsEtudiant/_Default.cshtml";
 }
 <header id="head" class="secondary"></header>
-<h2>Index</h2>
+    @if (TempData["AlertMessage"] != null) { 
+    
+        <div class="alert alert-success">
+     <strong>Success !</strong>   @TempData["AlertMessage"]
 
+    </div>
+    
+    }
+<br />
+    <!--/.row-->
 <p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+    <h3 id="Acc">BIENVENUE DANS VOTRE ESPACE DE CONSERVATION</h3>
+ Bienvenue dans votre Conservation Le site web MyConservation a pour but de Conserver un maximum des traveaux des étudiants 
+    en accès gratuit sur internet. Pour déposer votre traveau, il suffit de clique ici  @Html.ActionLink("Ajouter ton traveau", "Create")  
+    .
+ Votre traveau est mis en ligne peu de temps après. 
+<h4>Préambule</h4>
+Le site web MyConservation a pour but le partage des connaissances via la publication et
+     la consultation gratuite via internet de documents réalisés par des étudiants dans le cadre de leurs études,
+     ou des chercheurs dans le cadre de leurs recherches. Son objectif est d'offrir un accès au savoir au plus grand 
+    nombre sans limitations géographiques, financières ou autres. 
+        
+</p> 
+<div class="row">
+			<div class="col-lg-12">
+				<h3 class="page-header" id="Acc"><i class="fa fa-first-order" aria-hidden="true"></i>Mes Documents qui sont en ligne</h3>
+			</div>
+		</div>
+
+<table class="table table-striped">
+    <thead >
     <tr>
+        
         <th>
-            @Html.DisplayNameFor(model => model.titre)
+            Titre
+        </th>
+        
+        <th>
+            Universite
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Etudiant.nom)
+            Diplome
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Universite1.nomUniversite)
+           Domaine
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Diplome1.niveau)
+           Nature
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DomaineFormation.nomDomaine)
+           Annee
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NatureDocument.nature)
+            Fichier
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.annee)
+            A.P
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fichier)
+            A.T
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.etatPublication)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.autoriseTelecharge)
-        </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
+        </thead>
+    <tbody>
 
 @foreach (var item in Model) {
     <tr>
+        
         <td>
             @Html.DisplayFor(modelItem => item.titre)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Etudiant.nom)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.Universite1.nomUniversite)
         </td>
@@ -78,13 +103,12 @@
             @Html.DisplayFor(modelItem => item.autoriseTelecharge)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+           @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-info"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-warning"}) |
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-danger"})
         </td>
     </tr>
 }
-
+</tbody>
 </table>
-
 <h1>Les documents :</h1>

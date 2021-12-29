@@ -4,8 +4,8 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
-
-<h2>Create</h2>
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+<h1 id="Acc">Ajouter un nouveau document</h1>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -14,7 +14,7 @@
         <legend>Document</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.titre)
+         <label for="inputEmail4" class="form-label">Titre</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.titre)
@@ -22,7 +22,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.nomAuteur, "Etudiant")
+           <label for="inputEmail4" class="form-label">Auteur</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("nomAuteur", String.Empty)
@@ -30,7 +30,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.universite, "Universite1")
+           <label for="inputEmail4" class="form-label">Universite</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("universite", String.Empty)
@@ -38,7 +38,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.diplome, "Diplome1")
+           <label for="inputEmail4" class="form-label">Diplome</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("diplome", String.Empty)
@@ -46,7 +46,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.domaine, "DomaineFormation")
+          <label for="inputEmail4" class="form-label">Domaine de formation</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("domaine", String.Empty)
@@ -54,7 +54,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.nature, "NatureDocument")
+        <label for="inputEmail4" class="form-label">Nature du Document</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("nature", String.Empty)
@@ -62,7 +62,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.annee)
+        <label for="inputEmail4" class="form-label">Annee</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.annee)
@@ -70,7 +70,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.fichier)
+           <label for="inputEmail4" class="form-label">Fichier</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.fichier)
@@ -78,7 +78,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.etatPublication)
+            <label for="inputEmail4" class="form-label">Etat de Publication</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.etatPublication)
@@ -86,7 +86,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.autoriseTelecharge)
+           <label for="inputEmail4" class="form-label">Autorisation de telechargement</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.autoriseTelecharge)
@@ -94,11 +94,14 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <button type="submit" value="Create" class="btn btn-info">Ajouter</button>
+               <button type="reset" class="btn btn-danger">Annuler</button>
+            
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retourne sur la liste", "Index")
+</div>
 </div>
