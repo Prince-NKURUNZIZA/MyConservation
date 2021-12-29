@@ -5,29 +5,53 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Create</h2>
+<div class="container">
 
-@using (Html.BeginForm()) {
+		
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 id="Acc" class="page-title">Ajouter un domaine de formation</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							
+							<h3>Domaine de formation</h3>
+							<hr>
+							
+     @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
+							<form>
+								<div class="top-margin">
+									<label>Nom du domaine <span class="text-danger">*</span></label>
+									<input type="text" name="nomDomaine" class="form-control" required>
+                                     @Html.ValidationMessageFor(model => model.nomDomaine)
 
-    <fieldset>
-        <legend>DomaineFormation</legend>
+								</div>
+								<hr>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nomDomaine)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.nomDomaine)
-            @Html.ValidationMessageFor(model => model.nomDomaine)
-        </div>
+								<div class="row">
+									
+					
+										<button value="Create" class="btn btn-info" type="submit">Ajouter</button>
+                                        <button  class="btn btn-danger" type="reset">Annuler</button>
+                                        
+									
+                                   <div>
+                            @Html.ActionLink("Retourne sur la liste", "Index")
+                                  </div>
+								</div>
+							</form>
+          }
+						</div>
+					</div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+				</div>
+				
+			</article>
+			<!-- /Article -->
 </div>
