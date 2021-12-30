@@ -4,30 +4,39 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
+
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Create</h2>
+<h1 id="Acc" class="page-title">Ajoute un image</h1>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Galery</legend>
+         <div class="editor-label">
+            <h3>Photo</h3>
+        </div>
+        <div class="editor-field">
+            <input type="file" name="photo" />
+            @Html.ValidationMessageFor(model => model.photo)
+        </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.evenement, "Evenement1")
+           <h4>Titre d'evenement</h4>
         </div>
         <div class="editor-field">
             @Html.DropDownList("evenement", String.Empty)
             @Html.ValidationMessageFor(model => model.evenement)
         </div>
 
-        <p>
-            <input type="submit" value="Create" />
+     <p>
+            <button value="Create" class="btn btn-info" type="submit">Ajouter</button>
+             <button  class="btn btn-danger" type="reset">Annuler</button>
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retourne sur la liste", "Index")
 </div>
 </div>

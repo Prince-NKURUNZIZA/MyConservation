@@ -4,21 +4,27 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
+
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Details</h2>
+<h2 id="Acc"> Les Details d'un image</h2>
 
 <fieldset>
     <legend>Galery</legend>
-
+    <div class="display-field">
+     <h4>Identifiant:   @Html.DisplayFor(model => model.id)</h4>
+    </div>
+    <div class="display-field">
+     <h4>Identifiant:   @Html.DisplayFor(model => model.id)</h4>
+    </div>
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Evenement1.titreEvenement)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Evenement1.titreEvenement)
+     <h4>Titre d'evenement   @Html.DisplayFor(model => model.Evenement1.titreEvenement)</h4>
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.id }, new {@class="btn btn-info" }) |
+    @Html.ActionLink("Retourne sur la liste", "Index")
 </p>
 </div>

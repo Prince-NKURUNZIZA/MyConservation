@@ -4,8 +4,9 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
+
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Edit</h2>
+<h2 id="Acc">Modifier un image</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -14,9 +15,16 @@
         <legend>Galery</legend>
 
         @Html.HiddenFor(model => model.id)
+        <div class="editor-label">
+           <h3>Photo</h3>
+        </div>
+        <div class="editor-field">
+           <input type="file" name="photo" />
+            @Html.ValidationMessageFor(model => model.photo)
+        </div> <br />
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.evenement, "Evenement1")
+           <h4>Titre d'evenement</h4>
         </div>
         <div class="editor-field">
             @Html.DropDownList("evenement", String.Empty)
@@ -24,12 +32,13 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <button type="submit" value="Save" class="btn btn-info">Modifier</button>
+           <button type="reset"  class="btn btn-danger">Annuler</button>
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retourne sur la liste", "Index")
 </div>
 </div>
