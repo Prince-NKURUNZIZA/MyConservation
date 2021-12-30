@@ -5,16 +5,16 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Create</h2>
+<h1 id="Acc" class="page-title">Publie un document</h1>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>DocumentPublier</legend>
+        <legend>Document Publier</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.titre, "Document")
+           <h3>Titre du document</h3> 
         </div>
         <div class="editor-field">
             @Html.DropDownList("titre", String.Empty)
@@ -22,20 +22,21 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.commentaire)
+            <h3>Commentaire</h3>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.commentaire)
             @Html.ValidationMessageFor(model => model.commentaire)
-        </div>
+        </div><br />
 
         <p>
-            <input type="submit" value="Create" />
+            <button value="Create" class="btn btn-info" type="submit">Ajouter</button>
+             <button  class="btn btn-danger" type="reset">Annuler</button>
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retourne sur la liste", "Index")
 </div>
 </div>

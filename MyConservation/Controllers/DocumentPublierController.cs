@@ -54,6 +54,7 @@ namespace MyConservation.Controllers
             {
                 db.DocumentPubliers.Add(documentpublier);
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");
             }
 
@@ -85,6 +86,7 @@ namespace MyConservation.Controllers
             {
                 db.Entry(documentpublier).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Modifié avec sucess....!";
                 return RedirectToAction("Index");
             }
             ViewBag.titre = new SelectList(db.Documents, "id", "titre", documentpublier.titre);
@@ -113,6 +115,7 @@ namespace MyConservation.Controllers
             DocumentPublier documentpublier = db.DocumentPubliers.Find(id);
             db.DocumentPubliers.Remove(documentpublier);
             db.SaveChanges();
+            TempData["AlertMessage"] = "Supprimé avec sucess....!";
             return RedirectToAction("Index");
         }
 

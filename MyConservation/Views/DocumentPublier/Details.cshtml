@@ -5,27 +5,31 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h2>Details</h2>
+<h2 id="Acc"> Les Details d'un document publié</h2>
 
 <fieldset>
-    <legend>DocumentPublier</legend>
-
+    <legend>Domaine Formation</legend>
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Document.titre)
+         <h3>Identifiant :</h3>
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Document.titre)
+        @Html.DisplayFor(model => model.id)
     </div>
-
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.commentaire)
+         <h3>Titre :</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titre)
+    </div>
+    <div class="display-label">
+         <h3>Commentaire :</h3>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.commentaire)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.id }, new {@class="btn btn-info" }) |
+    @Html.ActionLink("Retourne sur la liste", "Index")
 </p>
-    </div>
+</div>
