@@ -176,6 +176,7 @@
     <Compile Include="Controllers\DomaineFormationController.cs" />
     <Compile Include="Controllers\EtudiantClientController.cs" />
     <Compile Include="Controllers\EtudiantController.cs" />
+    <Compile Include="Controllers\EvenementController.cs" />
     <Compile Include="Controllers\GalerieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -521,6 +522,11 @@
     <Content Include="Views\Galerie\Create.cshtml" />
     <Content Include="Views\Galerie\Edit.cshtml" />
     <Content Include="Views\Galerie\Delete.cshtml" />
+    <Content Include="Views\Evenement\Index.cshtml" />
+    <Content Include="Views\Evenement\Details.cshtml" />
+    <Content Include="Views\Evenement\Create.cshtml" />
+    <Content Include="Views\Evenement\Edit.cshtml" />
+    <Content Include="Views\Evenement\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

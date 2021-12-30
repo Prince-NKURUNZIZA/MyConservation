@@ -1,0 +1,45 @@
+﻿@model MyConservation.Models.Evenement
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Layouts/_Default.cshtml";
+}
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+<h2 id="Acc">Modifier l'evenement</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Evenement</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+           <h4>Titre d'evenement</h4>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.titreEvenement)
+            @Html.ValidationMessageFor(model => model.titreEvenement)
+        </div>
+
+        <div class="editor-label">
+            <h4>Commentatire</h4>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.commentaire)
+            @Html.ValidationMessageFor(model => model.commentaire)
+        </div><br />
+
+     <p>
+            <button type="submit" value="Save" class="btn btn-info">Modifier</button>
+           <button type="reset"  class="btn btn-danger">Annuler</button>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Retourne sur la liste", "Index")
+</div>
+</div>
