@@ -52,6 +52,7 @@ namespace MyConservation.Controllers
             {
                 db.NatureDocuments.Add(naturedocument);
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");
             }
 
@@ -81,6 +82,7 @@ namespace MyConservation.Controllers
             {
                 db.Entry(naturedocument).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["AlertMessage"] = "Modifié avec sucess....!";
                 return RedirectToAction("Index");
             }
             return View(naturedocument);
@@ -108,6 +110,7 @@ namespace MyConservation.Controllers
             NatureDocument naturedocument = db.NatureDocuments.Find(id);
             db.NatureDocuments.Remove(naturedocument);
             db.SaveChanges();
+            TempData["AlertMessage"] = "Supprimé avec sucess....!";
             return RedirectToAction("Index");
         }
 
