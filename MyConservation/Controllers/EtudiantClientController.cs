@@ -75,13 +75,16 @@ namespace MyConservation.Controllers
             
             
         if(obj != null){
+            
+           
             return RedirectToAction("Acceuil","CompteEtudiant");
         }
        
         else {
 
-            return Content("<script language='javascript' type='text/javascript'>alert('Aucun compte correspond à votre authentification');</script>") ;
-           
+            TempData["AlertMessage"] = "Mot de passe incorrect ou pas de compte....!";
+            return RedirectToAction("Login", "EtudiantClient");
+            
             
         } 
         }

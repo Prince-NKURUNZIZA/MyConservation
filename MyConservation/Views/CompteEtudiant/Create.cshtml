@@ -6,107 +6,110 @@
 }
 <header id="head" class="secondary"></header>
 
-
-<h2>Create</h2>
-
-
 @using (Html.BeginForm("Create","CompteEtudiant",FormMethod.Post, new {enctype="multpart/form-data" }))
 {
-    @Html.ValidationSummary(true)
+   
+     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Document</legend>
+  <div class="container">
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.titre)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.titre)
-            @Html.ValidationMessageFor(model => model.titre)
-        </div>
+		
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nomAuteur, "Etudiant")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("nomAuteur", String.Empty)
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 id="Acc" class="page-title">Conserver vos traveau sur MyConservation</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Ajouter un nouveau document</h3>
+							<p class="text-center text-muted">Si vous avez déjà un depot sur votre compte, <a href="@Url.Action("Index","CompteEtudiant")">Consulter ici</a> directement </p>
+							<hr>
+
+							<form>
+								<div class="top-margin">
+									<label>Titre du coment</label>
+									<input type="text" name="titre" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.titre)
+								</div>
+								<div class="top-margin">
+									<label>Auteur</label>
+				 @Html.DropDownList("nomAuteur", null,"Selection l'auteur", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.nomAuteur)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.universite, "Universite1")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("universite", String.Empty)
+								</div>
+                               	<div class="top-margin">
+									<label>Universite</label>
+				 @Html.DropDownList("universite", null,"Selection l'universite", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.universite)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.diplome, "Diplome1")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("diplome", String.Empty)
+								</div>
+									<div class="top-margin">
+									<label>Niveau diplome</label>
+				 @Html.DropDownList("diplome", null,"Selection diplome", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.diplome)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.domaine, "DomaineFormation")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("domaine", String.Empty)
+								</div>
+                                	<div class="top-margin">
+									<label>Domaine de formation</label>
+				 @Html.DropDownList("domaine", null,"Selection le domaine", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.domaine)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nature, "NatureDocument")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("nature", String.Empty)
+								</div>
+                                	<div class="top-margin">
+									<label>Domaine de formation</label>
+				 @Html.DropDownList("nature", null,"Selection la nature du document", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.nature)
-        </div>
+								</div>
+                                <div class="top-margin">
+									<label>Annee de publication</label>
+									<input type="number" name="annee" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.annee)
+								</div>
+                                <div class="top-margin">
+									<label>Votre fichier</label>
+									<input type="file" name="fichier" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.fichier)
+								</div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.annee)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.annee)
-            @Html.ValidationMessageFor(model => model.annee)
-        </div>
-        <div class="editor-label">
-             
-            @Html.LabelFor(model => model.fichier)
-        </div>
-
-        <div class="editor-field">
-        <input type="file" name="docfile" id="fichier"  required>
-        @Html.ValidationMessageFor(model => model.fichier)
-
-        </div>
-        
-        <div class="editor-label">
-            @Html.LabelFor(model => model.etatPublication)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.etatPublication)
+								<div class="row top-margin">
+									<div class="col-sm-6">
+										<label>Etat de Publication <span class="text-danger"></span></label>
+							 @Html.EditorFor(model => model.etatPublication)
             @Html.ValidationMessageFor(model => model.etatPublication)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.autoriseTelecharge)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.autoriseTelecharge)
+									</div>
+									<div class="col-sm-6">
+										<label>Autorisation de Telechargement <span class="text-danger"></span></label>
+				 @Html.EditorFor(model => model.autoriseTelecharge)
             @Html.ValidationMessageFor(model => model.autoriseTelecharge)
-        </div>
+									</div>
+								</div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
+								<hr>
+
+								<div class="row">
+									
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-action" type="submit" value="Create">Conserve</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div> 
     
-    </fieldset>
+    
+   
 }
 
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retourne sur vos depot", "Index")
 </div>
