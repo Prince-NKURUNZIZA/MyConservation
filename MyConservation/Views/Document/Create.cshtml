@@ -5,106 +5,112 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-<h1 id="Acc">Ajouter un nouveau document</h1>
+@using (Html.BeginForm("Create","Document",FormMethod.Post, new {enctype="multpart/form-data" }))
+{
+   
+     @Html.ValidationSummary(true)
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+  <div class="container">
+<h1 id="Acc" class="page-title">Ajouter un nouveau traveau</h1>
+		
 
-    <fieldset>
-        <legend>Document</legend>
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Ajouter un nouveau document</h3>
+							
+							<hr>
 
-        <div class="editor-label">
-         <label for="inputEmail4" class="form-label">Titre</label>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.titre)
-            @Html.ValidationMessageFor(model => model.titre)
-        </div>
-
-        <div class="editor-label">
-           <label for="inputEmail4" class="form-label">Auteur</label>
-        </div>
-        <div class="editor-field">
-             
-                  @Html.DropDownList("nomAuteur", String.Empty)
+							<form>
+								<div class="top-margin">
+									<label>Titre du coment</label>
+									<input type="text" name="titre" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.titre)
+								</div>
+								<div class="top-margin">
+									<label>Auteur</label>
+				 @Html.DropDownList("nomAuteur", null,"Selection l'auteur", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.nomAuteur)
-                 
-         
-        </div>
-
-        <div class="editor-label">
-           <label for="inputEmail4" class="form-label">Universite</label>
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("universite", String.Empty)
+								</div>
+                               	<div class="top-margin">
+									<label>Universite</label>
+				 @Html.DropDownList("universite", null,"Selection l'universite", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.universite)
-        </div>
-
-        <div class="editor-label">
-           <label for="inputEmail4" class="form-label">Diplome</label>
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("diplome", String.Empty)
+								</div>
+									<div class="top-margin">
+									<label>Niveau diplome</label>
+				 @Html.DropDownList("diplome", null,"Selection diplome", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.diplome)
-        </div>
-
-        <div class="editor-label">
-          <label for="inputEmail4" class="form-label">Domaine de formation</label>
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("domaine", String.Empty)
+								</div>
+                                	<div class="top-margin">
+									<label>Domaine de formation</label>
+				 @Html.DropDownList("domaine", null,"Selection le domaine", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.domaine)
-        </div>
-
-        <div class="editor-label">
-        <label for="inputEmail4" class="form-label">Nature du Document</label>
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("nature", String.Empty)
+								</div>
+                                	<div class="top-margin">
+									<label>Domaine de formation</label>
+				 @Html.DropDownList("nature", null,"Selection la nature du document", htmlAttributes: new {@class = "form-control"})
             @Html.ValidationMessageFor(model => model.nature)
-        </div>
+								</div>
+                                <div class="top-margin">
+									<label>Annee de publication</label>
+									<input type="number" name="annee" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.annee)
+								</div>
+                                <div class="top-margin">
+									<label>Votre fichier</label>
+									<input type="file" name="fichier" class="form-control">
+                                     @Html.ValidationMessageFor(model => model.fichier)
+								</div>
 
-        <div class="editor-label">
-        <label for="inputEmail4" class="form-label">Annee</label>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.annee)
-            @Html.ValidationMessageFor(model => model.annee)
-        </div>
-
-        <div class="editor-label">
-           <label for="inputEmail4" class="form-label">Fichier</label>
-        </div>
-        <div class="editor-field">
-           <input type="file" name="fichier" id="fichier"  required>
-        @Html.ValidationMessageFor(model => model.fichier)
-        </div>
-
-        <div class="editor-label">
-            <label for="inputEmail4" class="form-label">Etat de Publication</label>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.etatPublication)
+								<div class="row top-margin">
+									<div class="col-sm-6">
+										<label>Etat de Publication <span class="text-danger"></span></label>
+							 @Html.EditorFor(model => model.etatPublication)
             @Html.ValidationMessageFor(model => model.etatPublication)
-        </div>
-
-        <div class="editor-label">
-           <label for="inputEmail4" class="form-label">Autorisation de telechargement</label>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.autoriseTelecharge)
+									</div>
+									<div class="col-sm-6">
+										<label>Autorisation de Telechargement <span class="text-danger"></span></label>
+				 @Html.EditorFor(model => model.autoriseTelecharge)
             @Html.ValidationMessageFor(model => model.autoriseTelecharge)
-        </div>
+									</div>
+								</div>
 
-        <p>
-            <button type="submit" value="Create" class="btn btn-info">Ajouter</button>
-               <button type="reset" class="btn btn-danger">Annuler</button>
-            
-        </p>
-    </fieldset>
+								<hr>
+
+								<div class="row">
+									
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-info" type="submit" value="Create">Conserve</button>
+									</div>
+                                    <div class="col-lg-4 text-right">
+										<button class="btn btn-danger" type="reset" >Annuler</button>
+									</div>
+                                    <div>
+    @Html.ActionLink("Retourne sur vos depot", "Index")
+</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div> 
+    
+    
+   
 }
-
-<div>
-    @Html.ActionLink("Retourne sur la liste", "Index")
-</div>
-</div>
+    </div>

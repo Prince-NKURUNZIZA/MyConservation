@@ -20,14 +20,20 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 id="Acc" class="page-title">Conserver vos traveau sur MyConservation</h1>
+					<h1 id="Acc" class="page-title">Conserver vos Traveaux sur MyConservation</h1>
 				</header>
-				
+					<p> <h3>Quels sont les avantages de publier un traveau sur MyConservation:</h3><br />
+
+-Vous vous faites connaître par rapport à vos connaissances dans un domaine précis.<br />
+-Cela peut vous aider dans votre recherche d'emploi<br />
+-Vous aidez les autres étudiants dans leurs propres travaux<br />
+-Vous participez à la libre circulation des connaissances<br />
+-Vous améliorez votre capacite</p>
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">Ajouter un nouveau document</h3>
-							<p class="text-center text-muted">Si vous avez déjà un depot sur votre compte, <a href="@Url.Action("Index","CompteEtudiant")">Consulter ici</a> directement </p>
+							
 							<hr>
 
 							<form>
@@ -90,8 +96,14 @@
 								<div class="row">
 									
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit" value="Create">Conserve</button>
+										<button class="btn btn-info" type="submit" value="Create">Conserve</button>
 									</div>
+                                    <div class="col-lg-4 text-right">
+										<button class="btn btn-danger" type="reset" >Annuler</button>
+									</div>
+                                    <div>
+    @Html.ActionLink("Retourne sur vos depot", "Index")
+</div>
 								</div>
 							</form>
 						</div>
@@ -108,8 +120,4 @@
     
    
 }
-
-
-<div>
-    @Html.ActionLink("Retourne sur vos depot", "Index")
-</div>
+    

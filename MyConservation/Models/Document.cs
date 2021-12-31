@@ -32,10 +32,11 @@ namespace MyConservation.Models
         public int nature { get; set; }
         public int annee { get; set; }
 
-        [DisplayName("upload file")]
+       // [DisplayName("upload file")]
         public string fichier { get; set; }
-        [NotMapped]
-        public HttpPostedFileBase docfile { get; set; }
+        
+       // [NotMapped]
+       // public HttpPostedFileBase docfile { get; set; }
 
         public bool etatPublication { get; set; }
         public bool autoriseTelecharge { get; set; }
