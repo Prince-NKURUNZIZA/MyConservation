@@ -168,6 +168,7 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CompteEtudiantController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContactEtudiantController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DiplomeController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
@@ -527,6 +528,11 @@
     <Content Include="Views\Evenement\Create.cshtml" />
     <Content Include="Views\Evenement\Edit.cshtml" />
     <Content Include="Views\Evenement\Delete.cshtml" />
+    <Content Include="Views\ContactEtudiant\Index.cshtml" />
+    <Content Include="Views\ContactEtudiant\Details.cshtml" />
+    <Content Include="Views\ContactEtudiant\Create.cshtml" />
+    <Content Include="Views\ContactEtudiant\Edit.cshtml" />
+    <Content Include="Views\ContactEtudiant\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
