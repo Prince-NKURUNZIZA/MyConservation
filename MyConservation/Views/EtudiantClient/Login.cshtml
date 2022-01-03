@@ -12,8 +12,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="@Url.Action("Index","Client")">Acceuil</a></li>
-			<li class="active">Entre dans votre compte</li>
+			<li ><a href="@Url.Action("Index","Client")">Acceuil</a></li>
+			<li  class="active">Entre dans votre compte</li>
 		</ol>
 
 		<div class="row">
@@ -21,7 +21,7 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Se connecter</h1>
+					<h1 id="Acc" class="page-title">Se connecter</h1>
 				</header>
 				    @if (TempData["AlertMessage"] != null) { 
     
@@ -34,7 +34,7 @@
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3 class="thin text-center">Se connecter sur votre compte</h3>
+							<h3 id="Acc" class="thin text-center">Se connecter sur votre compte</h3>
 							<p class="text-center text-muted">Si vous n'avez pas de compte <a href="@Url.Action("Create","EtudiantClient")">Créer maintenant</a> Pour avoir un compte sur Myconservation </p>
 							<hr>
 							
