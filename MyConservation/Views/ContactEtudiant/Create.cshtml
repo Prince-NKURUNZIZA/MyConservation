@@ -5,10 +5,98 @@
     Layout = "~/Views/LayoutsEtudiant/_Default.cshtml";
 }
 
-<h2>Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
+
+    <header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="@Url.Action("Index","Client")">Acceuil</a></li>
+			
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-sm-9 maincontent">
+				<header class="page-header">
+					<h1 id="Acc" class="page-title">Contacts nous</h1>
+				</header>
+				
+				<p>
+					Envoye vos messages, vos suggestions ou dans l'initiative de nous soutenir
+				</p>
+				<br>
+					<form>
+						<div class="row">
+							<div class="col-sm-4">
+								<input class="form-control" name="nom" type="text" placeholder="votre nom" required>
+                                @Html.ValidationMessageFor(model => model.nom)
+							</div>
+							<div class="col-sm-4">
+								<input class="form-control" name="email" type="text" placeholder="votre email" required>
+                                @Html.ValidationMessageFor(model => model.email)
+							</div>
+							<div class="col-sm-4">
+								<input class="form-control" name="telephone" type="text" placeholder="Votre telephone" required>
+                                 @Html.ValidationMessageFor(model => model.telephone)
+							</div>
+						</div> <br />
+                        <div class="col-sm-4">
+								<input class="form-control" name="objet" type="text" placeholder="objet" required>
+                                 @Html.ValidationMessageFor(model => model.objet)
+							</div><br />
+						<br>
+						<div class="row">
+							<div class="col-sm-12">
+								<textarea placeholder="Ecrit votre message ici..." name="message1" class="form-control" rows="9" required></textarea>
+                                 @Html.ValidationMessageFor(model => model.message1)
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-sm-6">
+								
+							</div>
+							<div class="col-sm-6 text-right">
+								<input class="btn btn-action" type="submit" value="Envoyer">
+							</div>
+						</div>
+					</form>
+
+			</article>
+			<!-- /Article -->
+			
+			<!-- Sidebar -->
+			<aside class="col-sm-3 sidebar sidebar-right">
+
+				<div class="widget">
+					<h4>Address</h4>
+					<address>
+					102 av de l'agriculture, Bujumbura-Gihosha
+					</address>
+					<h4>Telephone:</h4>
+					<address>
+						+257 71013023 <br />
+                        +257 61124087
+
+					</address>
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
+
+		</div>
+	</div>	<!-- /container -->
+	
+	<section class="container-full top-space">
+		<div id="map"></div>
+	</section>
+
 
     <fieldset>
         <legend>Message</legend>
