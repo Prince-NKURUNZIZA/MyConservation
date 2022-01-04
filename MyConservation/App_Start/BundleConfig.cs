@@ -67,6 +67,12 @@ namespace MyConservation
                 "~/Assets2/js/template.js",
                 "~/Assets2/js/Script.js"
                 ));
+            bundles.Add(new StyleBundle("~/Assets3/css").Include(
+               "~/Assets2/css/bootstrap.css",
+               "~/Assets2/css/Style.css"
+              
+               ));
+           
 
         }
     }

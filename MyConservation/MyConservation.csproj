@@ -180,6 +180,7 @@
     <Compile Include="Controllers\EvenementController.cs" />
     <Compile Include="Controllers\GalerieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginAdminController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NatureDocumentController.cs" />
@@ -265,6 +266,16 @@
     <Content Include="Assets2\js\respond.min.js" />
     <Content Include="Assets2\js\Script.js" />
     <Content Include="Assets2\js\template.js" />
+    <Content Include="Assets3\css\bootstrap-table.css" />
+    <Content Include="Assets3\css\bootstrap-theme.css" />
+    <Content Include="Assets3\css\bootstrap-theme.min.css" />
+    <Content Include="Assets3\css\bootstrap.css" />
+    <Content Include="Assets3\css\bootstrap.min.css" />
+    <Content Include="Assets3\css\datepicker.css" />
+    <Content Include="Assets3\css\datepicker3.css" />
+    <Content Include="Assets3\css\font-awesome.min.css" />
+    <Content Include="Assets3\css\fontawesome.css" />
+    <Content Include="Assets3\css\Style.css" />
     <Content Include="Assets\css\bootstrap-table.css" />
     <Content Include="Assets\css\bootstrap-theme.css" />
     <Content Include="Assets\css\bootstrap-theme.min.css" />
@@ -382,6 +393,10 @@
     <Content Include="Assets2\fonts\fontawesome-webfont.ttf" />
     <Content Include="Assets2\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets2\fonts\FontAwesome.otf" />
+    <Content Include="Assets3\css\bootstrap-theme.css.map" />
+    <Content Include="Assets3\css\bootstrap-theme.min.css.map" />
+    <Content Include="Assets3\css\bootstrap.css.map" />
+    <Content Include="Assets3\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -440,7 +455,7 @@
     <Content Include="Views\Partials\_Nav.cshtml" />
     <Content Include="Views\Partials\_Sidebar.cshtml" />
     <Content Include="Views\Layouts\_Default.cshtml" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\Admin.cshtml" />
     <Content Include="Views\Administrateur\Index.cshtml" />
     <Content Include="Views\Administrateur\Details.cshtml" />
     <Content Include="Views\Administrateur\Create.cshtml" />
@@ -533,6 +548,15 @@
     <Content Include="Views\ContactEtudiant\Create.cshtml" />
     <Content Include="Views\ContactEtudiant\Edit.cshtml" />
     <Content Include="Views\ContactEtudiant\Delete.cshtml" />
+    <Content Include="Views\PartialsAdmin\_Head.cshtml" />
+    <Content Include="Views\LayoutsAdmin\_Default.cshtml" />
+    <Content Include="Views\LoginAdmin\Index.cshtml" />
+    <Content Include="Views\LoginAdmin\Details.cshtml" />
+    <Content Include="Views\LoginAdmin\Create.cshtml" />
+    <Content Include="Views\LoginAdmin\Edit.cshtml" />
+    <Content Include="Views\LoginAdmin\Delete.cshtml" />
+    <Content Include="Views\LoginAdmin\LoginAdm.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

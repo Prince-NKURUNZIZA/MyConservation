@@ -1,0 +1,65 @@
+﻿@model MyConservation.Models.Administrateur
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/LayoutsAdmin/_Default.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Administrateur</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nom)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nom)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.prenom)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.prenom)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.adresse)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.adresse)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telephone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telephone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sexe)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sexe)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
