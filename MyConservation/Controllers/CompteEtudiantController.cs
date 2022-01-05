@@ -47,6 +47,7 @@ namespace MyConservation.Controllers
 
         public ActionResult Create()
         {
+            
             ViewBag.diplome = new SelectList(db.Diplomes, "id", "niveau");
             ViewBag.domaine = new SelectList(db.DomaineFormations, "id", "nomDomaine");
             ViewBag.nature = new SelectList(db.NatureDocuments, "id", "nature");
@@ -54,6 +55,7 @@ namespace MyConservation.Controllers
             ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite");
 
             return View();
+
         }
 
         //
@@ -62,9 +64,20 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(Document document)
         {
-          
-            if (ModelState.IsValid)
+
+   if (ModelState.IsValid)
             {
+                foreach (string upload in Request.Files)
+                {
+                    if (Request.Files[upload].FileName != "")
+                    {
+                        string path = AppDomain.CurrentDomain.BaseDirectory + "/App_Data/uploads/";
+                        string filename = Path.GetFileName(Request.Files[upload].FileName);
+                        Request.Files[upload].SaveAs(Path.Combine(path, filename));
+                    }
+                }
+                
+
                 db.Documents.Add(document);
                 db.SaveChanges();
                 TempData["AlertMessage"] = "Enregistre avec sucess....!";
@@ -78,7 +91,24 @@ namespace MyConservation.Controllers
             ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite", document.universite);
             return View(document);
         }
+        //////////////////////////////////////////////////////////
 
+        public ActionResult Downloads()
+        {
+            var dir = new System.IO.DirectoryInfo(Server.MapPath("~/App_Data/uploads/"));
+            System.IO.FileInfo[] fileNames = dir.GetFiles("*.*"); List<string> items = new List<string>();
+            foreach (var file in fileNames)
+            {
+                items.Add(file.Name);
+            }
+            return View(items);
+        }
+
+        public FileResult Download(string ImageName)
+        {
+            var FileVirtualPath = "~/App_Data/uploads/" + ImageName;
+            return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
+        }
       
 
         //

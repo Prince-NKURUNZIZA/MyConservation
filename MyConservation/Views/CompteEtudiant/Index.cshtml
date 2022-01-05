@@ -34,7 +34,7 @@ Le site web MyConservation a pour but le partage des connaissances via la public
 			</div>
 		</div>
 
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
     <thead >
     <tr>
         
@@ -91,9 +91,12 @@ Le site web MyConservation a pour but le partage des connaissances via la public
             @Html.DisplayFor(modelItem => item.autoriseTelecharge)
         </td>
         <td>
-           @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-info"}) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-warning"}) |
-            @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-danger"})
+            
+           @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-xs btn-info"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-xs btn-warning"}) |
+             @Html.ActionLink("Telecharger", "Downloads")
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-xs btn-danger"})
+            
         </td>
     </tr>
 }

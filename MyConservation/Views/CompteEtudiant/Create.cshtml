@@ -5,6 +5,7 @@
     Layout = "~/Views/LayoutsEtudiant/_Default.cshtml";
 }
 <header id="head" class="secondary"></header>
+ 
 
 @using (Html.BeginForm("Create","CompteEtudiant",FormMethod.Post, new {enctype="multpart/form-data" }))
 {
@@ -74,8 +75,10 @@
 								</div>
                                 <div class="top-margin">
 									<label>Votre fichier</label>
-									<input type="file" name="fichier" class="form-control">
+                                  <input type="file" name="fichier" id="fileUpload" class="form-control" /><br />  
+                                  
                                      @Html.ValidationMessageFor(model => model.fichier)
+ 
 								</div>
 
 								<div class="row top-margin">
@@ -93,10 +96,11 @@
 
 								<hr>
 
+
 								<div class="row">
 									
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-info" type="submit" value="Create">Conserve</button>
+										<button class="btn btn-info" id="btnUploadFile" type="submit" value="Create">Conserve</button>
 									</div>
                                     <div class="col-lg-4 text-right">
 										<button class="btn btn-danger" type="reset" >Annuler</button>
@@ -117,7 +121,37 @@
 		</div>
 	</div> 
     
-    
+ <script src="~/Assets/js/jquery-1.11.1.js"></script>  
+<script>  
+    $(document).ready(function () {  
+        $('#btnUploadFile').on('click', function () {  
+            var data = new FormData();  
+            var files = $("#fileUpload").get(0).files;  
+            // Add the uploaded image content to the form data collection  
+            if (files.length > 0) {  
+                data.append("UploadedImage", files[0]);  
+            }  
+            // Make Ajax request with the contentType = false, and procesDate = false  
+            var ajaxRequest = $.ajax({  
+                type: "POST",  
+                url: "myAction/Create",  
+                contentType: false,  
+                processData: false,  
+                data: data  
+            });  
+  
+            ajaxRequest.done(function (xhr, textStatus) {  
+                // Do other operation  
+            });  
+        });  
+    });
+    var data = new FormData();  
+    var files = $("#fileUpload").get(0).files;  
+    // Add the uploaded image content to the form data collection  
+    if (files.length > 0) {
+        data.append("UploadedImage", files[0]);
+    }
+</script>    
    
 }
     

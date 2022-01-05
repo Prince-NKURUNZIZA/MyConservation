@@ -241,6 +241,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\uploads\2save copie.jpg" />
     <Content Include="Assets2\css\bootstrap-theme.css" />
     <Content Include="Assets2\css\bootstrap.css" />
     <Content Include="Assets2\css\bootstrap.min.css" />
@@ -557,9 +558,9 @@
     <Content Include="Views\LoginAdmin\Delete.cshtml" />
     <Content Include="Views\LoginAdmin\LoginAdm.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\CompteEtudiant\Downloads.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Fichiers\" />
     <Folder Include="Views\AFichiers\" />
     <Folder Include="Views\Repports\" />
