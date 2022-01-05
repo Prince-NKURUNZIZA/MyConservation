@@ -28,7 +28,7 @@
         
 </h4> <br /><br />
 
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
     <thead >
     <tr>
         
@@ -91,9 +91,18 @@
             @Html.DisplayFor(modelItem => item.autoriseTelecharge)
         </td>
         <td>
-           @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-info"}) |
+<div class="dropdown">
+                <span class="dropdown-toggle dropdown-bg btn btn-outline-primary" role="button" id="dropdownMenuButton5"
+                        data-toggle="dropdown" aria-expanded="false">
+                  Voir les  Actions
+                </span>
+                <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton5">
+            @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-info"}) |
             @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-warning"}) |
             @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-danger"})
+                </div>
+            </div>
+      
         </td>
     </tr>
 }

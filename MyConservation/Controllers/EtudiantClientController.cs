@@ -70,11 +70,11 @@ namespace MyConservation.Controllers
         public ActionResult Login(Etudiant etudiant)
         {
             var obj = db.Etudiants.Where(x => x.email.Equals(etudiant.email) && x.password.Equals(etudiant.password)).FirstOrDefault();
-
-              
+                 
         if(obj != null){
-            
-           
+
+            Session["nom"] = obj.nom;
+            Session["id"] = obj.id;
             return RedirectToAction("Acceuil","CompteEtudiant");
         }
        
