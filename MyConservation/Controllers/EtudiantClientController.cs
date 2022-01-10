@@ -19,6 +19,8 @@ namespace MyConservation.Controllers
         public ActionResult Index()
         {
             return View(db.Etudiants.ToList());
+            
+            
         }
 
         //
@@ -32,6 +34,7 @@ namespace MyConservation.Controllers
                 return HttpNotFound();
             }
             return View(etudiant);
+           
         }
 
         //
@@ -54,7 +57,7 @@ namespace MyConservation.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Login");
             }
-
+            
             return View(etudiant);
         }
 
@@ -62,6 +65,7 @@ namespace MyConservation.Controllers
 
         public ActionResult Login()
         {
+            
             return View();
         }
 
@@ -69,21 +73,21 @@ namespace MyConservation.Controllers
 
         public ActionResult Login(Etudiant etudiant)
         {
-            var obj = db.Etudiants.Where(x => x.email.Equals(etudiant.email) && x.password.Equals(etudiant.password)).FirstOrDefault();
+            Session.Abandon();
+            Session.Clear();
+        var obj = db.Etudiants.Where(x => x.email.Equals(etudiant.email) && x.password.Equals(etudiant.password)).FirstOrDefault();
                  
         if(obj != null){
 
-            Session["nom"] = obj.nom;
-            Session["id"] = obj.id;
+            
             return RedirectToAction("Acceuil","CompteEtudiant");
+
         }
        
         else {
 
             TempData["AlertMessage"] = "Mot de passe incorrect ou pas de compte....!";
-            return RedirectToAction("Login", "EtudiantClient");
-            
-            
+            return RedirectToAction("Login", "EtudiantClient");       
         } 
         }
         //

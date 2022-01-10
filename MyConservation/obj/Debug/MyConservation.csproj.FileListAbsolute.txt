@@ -58,6 +58,6 @@ F:\MyConservation\MyConservation\bin\fr\System.Web.WebPages.Razor.resources.dll
 F:\MyConservation\MyConservation\bin\fr\WebMatrix.Data.resources.dll
 F:\MyConservation\MyConservation\bin\fr\Microsoft.Web.WebPages.OAuth.resources.dll
 F:\MyConservation\MyConservation\bin\fr\WebMatrix.WebData.resources.dll
-F:\MyConservation\MyConservation\obj\Debug\MyConservation.csprojResolveAssemblyReference.cache
 F:\MyConservation\MyConservation\obj\Debug\MyConservation.dll
 F:\MyConservation\MyConservation\obj\Debug\MyConservation.pdb
+F:\MyConservation\MyConservation\obj\Debug\MyConservation.csprojResolveAssemblyReference.cache
