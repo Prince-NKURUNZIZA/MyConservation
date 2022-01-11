@@ -14,6 +14,7 @@
     
     }
 <br />
+<div class="container Acceuil">
     <!--/.row-->
 <p>
     <h3 id="Acc">BIENVENUE DANS VOTRE ESPACE DE CONSERVATION</h3>
@@ -92,8 +93,8 @@ Le site web MyConservation a pour but le partage des connaissances via la public
         </td>
         <td>
             
-           @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-xs btn-info"}) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-xs btn-warning"}) |
+           @Html.ActionLink("Modifier", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
              @Html.ActionLink("Telecharger", "Downloads")
             @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-xs btn-danger"})
             
@@ -103,3 +104,4 @@ Le site web MyConservation a pour but le partage des connaissances via la public
 </tbody>
 </table>
 <h1>Les documents :</h1>
+    </div>

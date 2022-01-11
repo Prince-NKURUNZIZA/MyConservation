@@ -19,6 +19,19 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
+       /* List<CompteEtudiantModel> E =(from doc in db.Documents join etu in db.Etudiants
+                                            on doc.id equals etu.id
+                  where (@Session["nomEtudiant"] == etu.email)
+                   select new CompteEtudiantModel
+                   {
+                       titre = doc.titre,
+                       domaine = doc.domaine,
+                       nature = doc.nature,
+                       fichier = doc.fichier,
+                       etatPublication = doc.etatPublication,
+                       autoriseTelecharge = doc.autoriseTelecharge,
+                   }).ToList();*/
+                   
             var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1);
             
             
@@ -60,6 +73,10 @@ namespace MyConservation.Controllers
 
         //
         // POST: /CompteEtudiant/Create
+        public bool Infile(HttpPostedFileBase imgfile)
+        {
+            return (imgfile != null && imgfile.ContentLength > 0) ? true : false;
+        }  
 
         [HttpPost]
         public ActionResult Create(Document document)
@@ -67,15 +84,7 @@ namespace MyConservation.Controllers
 
    if (ModelState.IsValid)
             {
-                foreach (string upload in Request.Files)
-                {
-                    if (Request.Files[upload].FileName != "")
-                    {
-                        string path = AppDomain.CurrentDomain.BaseDirectory + "/App_Data/uploads/";
-                        string filename = Path.GetFileName(Request.Files[upload].FileName);
-                        Request.Files[upload].SaveAs(Path.Combine(path, filename));
-                    }
-                }
+               
                 
 
                 db.Documents.Add(document);

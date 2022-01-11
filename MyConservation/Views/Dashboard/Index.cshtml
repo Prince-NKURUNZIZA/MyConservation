@@ -7,7 +7,7 @@
 
 
 	<!-- container -->
-	<div class="container">
+	<div class="container AdminLog" >
  
 		
 		<div class="row">
@@ -36,7 +36,7 @@
     @Html.ValidationSummary(true)
 							<form>
 								<div class="top-margin">
-									<label>Username/Email <span class="text-danger">*</span></label>
+									<label>Email <span class="text-danger">*</span></label>
 									<input type="email" name="email" class="form-control" required>
                                      @Html.ValidationMessageFor(model => model.email)
 

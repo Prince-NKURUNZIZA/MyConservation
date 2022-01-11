@@ -193,6 +193,7 @@
     <Compile Include="Models\Administrateur.cs">
       <DependentUpon>ConservationModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CompteEtudiantModel.cs" />
     <Compile Include="Models\ConservationModel1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -282,6 +283,7 @@
     <Content Include="Assets\css\bootstrap-theme.min.css" />
     <Content Include="Assets\css\bootstrap.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\dataTables.bootstrap4.min.css" />
     <Content Include="Assets\css\datepicker.css" />
     <Content Include="Assets\css\datepicker3.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
@@ -296,11 +298,14 @@
     <Content Include="Assets\js\chart.js" />
     <Content Include="Assets\js\chart.min.js" />
     <Content Include="Assets\js\custom.js" />
+    <Content Include="Assets\js\dataTables.bootstrap4.min.js" />
     <Content Include="Assets\js\easypiechart-data.js" />
     <Content Include="Assets\js\easypiechart.js" />
     <Content Include="Assets\js\html5shiv.min.js" />
     <Content Include="Assets\js\jquery-1.11.1.js" />
     <Content Include="Assets\js\jquery-1.11.1.min.js" />
+    <Content Include="Assets\js\jquery-3.5.1.js" />
+    <Content Include="Assets\js\jquery.dataTables.min.js" />
     <Content Include="Assets\js\lumino.glyphs.js" />
     <Content Include="Assets\js\npm.js" />
     <Content Include="Assets\js\respond.min.js" />

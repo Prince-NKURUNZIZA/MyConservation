@@ -35,7 +35,7 @@ namespace MyConservation.Controllers
         {
             var obj = db.Administrateurs.Where(x => x.email.Equals(administrateur.email) && x.password.Equals(administrateur.password)).FirstOrDefault();
 
-
+            Session["username"] = obj.prenom;
             if (obj != null)
             {
 

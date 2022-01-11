@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.IO;
 using System.Web.Mvc;
 using MyConservation.Models;
 
@@ -48,6 +49,13 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(Administrateur administrateur)
         {
+            bool IsAdminExist = db.Administrateurs.Any(x => x.email == administrateur.email && x.id != administrateur.id);
+            if (IsAdminExist == true)
+            {
+                TempData["AlertMessage2"] = "L'administrateur existe deja....!";
+                return RedirectToAction("Index");
+            }
+            
             if (ModelState.IsValid)
             {
                 db.Administrateurs.Add(administrateur);
