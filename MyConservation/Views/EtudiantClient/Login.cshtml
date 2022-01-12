@@ -8,6 +8,14 @@
 
 <header id="head" class="secondary"></header>
 
+ @if (TempData["AlertMessage2"] != null) { 
+    
+        <div class="alert alert-success">
+     <strong>Erreur !</strong>   @TempData["AlertMessage2"]
+
+    </div>
+    
+    }
 	<!-- container -->
 	<div class="container AdminLog">
 

@@ -48,6 +48,13 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(DomaineFormation domaineformation)
         {
+            bool IsAdminExist = db.DomaineFormations.Any(x => x.nomDomaine == domaineformation.nomDomaine && x.id != domaineformation.id);
+            if (IsAdminExist == true)
+            {
+                TempData["AlertMessage2"] = "Le domaine  existe deja....!";
+                return RedirectToAction("Index");
+            }
+            
             if (ModelState.IsValid)
             {
                 db.DomaineFormations.Add(domaineformation);

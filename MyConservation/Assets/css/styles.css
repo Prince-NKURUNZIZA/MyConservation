@@ -1,8 +1,8 @@
 body {
-  background: #f1f4f7;
+  background: #778899;
   padding-top: 60px;
   font-size: 14px;
-  color: #444444;
+  color: black;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .nouveau {
@@ -10,6 +10,10 @@ body {
     background-color:black;
     height:30px;
     width:240px;
+}
+
+.Thead {
+    background-color:#008000;
 }
 
 #Acc {
@@ -97,7 +101,7 @@ input.form-control {
   border: 1px solid #f9243f; }
 
 .navbar-custom {
-  background: #222;
+  background: #8B4513;
   height: 60px; }
 
 .navbar-header .navbar-brand {

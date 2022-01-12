@@ -7,6 +7,15 @@
 <header id="head" class="secondary"></header>
  
 
+
+<h2>Upload</h2>  
+
+<input type="file" name="FileUpload1" id="fileUpload" /><br />  
+<input id="btnUploadFile" type="button" value="Upload File" />  
+@Html.ActionLink("Documents", "Downloads")
+
+
+
 @using (Html.BeginForm("Create","CompteEtudiant",FormMethod.Post, new {enctype="multpart/form-data" }))
 {
    
@@ -39,13 +48,13 @@
 
 							<form>
 								<div class="top-margin">
-									<label>Titre du coment</label>
+									<label>Titre du document</label>
 									<input type="text" name="titre" class="form-control">
                                      @Html.ValidationMessageFor(model => model.titre)
 								</div>
 								<div class="top-margin">
 									<label>Auteur</label>
-				 @Html.DropDownList("nomAuteur", null, htmlAttributes: new { @class = "form-control", value="@Session['nom']" })
+				 @Html.DropDownList("nomAuteur", null, htmlAttributes: new { @class = "form-control", value="@Session['nomEtudiant']" })
             @Html.ValidationMessageFor(model => model.nomAuteur)
 								</div>
                                	<div class="top-margin">

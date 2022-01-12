@@ -8,6 +8,31 @@
 
     @RenderPage("~/Views/PartialsEtudiant/_Footer.cshtml")
     @Scripts.Render("~/Assets2/js")
-  
+  <script src="~/Assets2/js/jquery-1.11.1.min.js"></script>  
+<script>
+    $(document).ready(function () {
+        $('#btnUploadFile').on('click', function () {
+            console.log("lll");
+            var data = new FormData();
+            var files = $("#fileUpload").get(0).files;
+            // Add the uploaded image content to the form data collection  
+            if (files.length > 0) {
+                data.append("UploadedImage", files[0]);
+            }
+            // Make Ajax request with the contentType = false, and procesDate = false  
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: "myAction/Index",
+                contentType: false,
+                processData: false,
+                data: data
+            });
+
+            ajaxRequest.done(function (xhr, textStatus) {
+                // Do other operation  
+            });
+        });
+    });
+</script>  
 </body>
 </html>

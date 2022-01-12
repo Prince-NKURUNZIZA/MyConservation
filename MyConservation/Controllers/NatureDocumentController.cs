@@ -48,6 +48,13 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(NatureDocument naturedocument)
         {
+            bool IsAdminExist = db.NatureDocuments.Any(x => x.nature == naturedocument.nature && x.id != naturedocument.id);
+            if (IsAdminExist == true)
+            {
+                TempData["AlertMessage2"] = "L'administrateur existe deja....!";
+                return RedirectToAction("Index");
+            }
+            
             if (ModelState.IsValid)
             {
                 db.NatureDocuments.Add(naturedocument);

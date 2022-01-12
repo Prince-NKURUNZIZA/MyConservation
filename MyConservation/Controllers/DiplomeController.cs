@@ -48,6 +48,13 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(Diplome diplome)
         {
+            bool IsAdminExist = db.Diplomes.Any(x => x.niveau == diplome.niveau && x.id != diplome.id);
+            if (IsAdminExist == true)
+            {
+                TempData["AlertMessage2"] = "Le diplome existe deja....!";
+                return RedirectToAction("Index");
+            }
+            
             if (ModelState.IsValid)
             {
                 db.Diplomes.Add(diplome);

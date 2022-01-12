@@ -5,82 +5,56 @@
     Layout = "~/Views/LayoutsEtudiant/_Default.cshtml";
 }
 <header id="head" class="secondary"></header>
-<h2>Details</h2>
+<div class="container Acceuil">
+<h2 id="Acc">Les détails de votre document</h2>
 
 <fieldset>
     <legend>Document</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.titre)
-    </div>
+   
     <div class="display-field">
-        @Html.DisplayFor(model => model.titre)
+     Titre :   @Html.DisplayFor(model => model.titre)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Etudiant.nom)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Etudiant.nom)
+      Nom de l'auteur :  @Html.DisplayFor(model => model.Etudiant.nom)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Universite1.nomUniversite)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Universite1.nomUniversite)
+     Université :   @Html.DisplayFor(model => model.Universite1.nomUniversite)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Diplome1.niveau)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Diplome1.niveau)
+     Niveau diplome :   @Html.DisplayFor(model => model.Diplome1.niveau)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DomaineFormation.nomDomaine)
-    </div>
+    
     <div class="display-field">
-        @Html.DisplayFor(model => model.DomaineFormation.nomDomaine)
+     Domaine de formation :   @Html.DisplayFor(model => model.DomaineFormation.nomDomaine)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NatureDocument.nature)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.NatureDocument.nature)
+      Nature du document :  @Html.DisplayFor(model => model.NatureDocument.nature)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.annee)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.annee)
+     Annee :   @Html.DisplayFor(model => model.annee)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.fichier)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.fichier)
+     Fichier:   @Html.DisplayFor(model => model.fichier)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.etatPublication)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.etatPublication)
+     Etat de publication :   @Html.DisplayFor(model => model.etatPublication)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.autoriseTelecharge)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.autoriseTelecharge)
+     Autorisation de télecharge :   @Html.DisplayFor(model => model.autoriseTelecharge)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.id }, new {@class="btn btn-xs btn-info" }) |
+    @Html.ActionLink("Retourne sur la page d'acceuil", "Acceuil")
 </p>
+</div>

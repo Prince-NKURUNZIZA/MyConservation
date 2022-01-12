@@ -13,7 +13,7 @@
     <header id="head" class="secondary"></header>
     
 	<!-- container -->
-	<div class="container">
+	<div class="container Acceuil">
 
 		<ol class="breadcrumb">
 			<li><a href="index.html">Acceuil</a></li>
@@ -25,7 +25,7 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Créer compte</h1>
+					<h1 class="page-title" id="Acc">Créer compte étudiant</h1>
 				</header>
 				
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -38,39 +38,42 @@
 							<form>
 								<div class="top-margin">
 									<label>Nom</label>
-									<input type="text" name="nom" class="form-control">
+									<input type="text" name="nom" class="form-control" required/>
                                      @Html.ValidationMessageFor(model => model.nom)
 								</div>
 								<div class="top-margin">
 									<label>Prenom</label>
-									<input type="text" name="prenom" class="form-control">
+									<input type="text" name="prenom" class="form-control" required/>
                                      @Html.ValidationMessageFor(model => model.prenom)
 								</div>
                                 <div class="top-margin">
 									<label>Adresse</label>
-									<input type="text" name="adresse" class="form-control">
+									<input type="text" name="adresse" class="form-control" required/>
                                      @Html.ValidationMessageFor(model => model.adresse)
 								</div>
 								<div class="top-margin">
 									<label>Email  <span class="text-danger">*</span></label>
-									<input type="email" name="email" class="form-control">
+									<input type="email" name="email" class="form-control" required/>
                                     @Html.ValidationMessageFor(model => model.email)
 								</div>
                                 <div class="top-margin">
 									<label>Sexe</label>
-									<input type="text" name="sexe" class="form-control">
+                                    <select name="sexe" id="Select1" class="form-control">
+                                        <option value="Masculin"> Masculin</option>
+                                        <option value="Feminin">Feminin</option>
+                                    </select>								
                                     @Html.ValidationMessageFor(model => model.sexe)
 								</div>
 
 								<div class="row top-margin">
 									<div class="col-sm-6">
 										<label>Nationalite <span class="text-danger">*</span></label>
-										<input type="text" name="nationalite" class="form-control">
+										<input type="text" name="nationalite" class="form-control" required/>
                                         @Html.ValidationMessageFor(model => model.nationalite)
 									</div>
 									<div class="col-sm-6">
 										<label>Password <span class="text-danger">*</span></label>
-										<input type="text" name="password" class="form-control">
+										<input type="password" name="password" class="form-control" required/>
                                         @Html.ValidationMessageFor(model => model.password)
 									</div>
 								</div>
@@ -79,13 +82,11 @@
 
 								<div class="row">
 									<div class="col-lg-8">
-										<label class="checkbox">
-											<input type="checkbox"> 
-											 <a href="page_terms.html">Accepter nos conditions</a>
-										</label>                        
+									                       
 									</div>
-									<div class="col-lg-4 text-right">
+									<div class="col-lg-8 text-right">
 										<button class="btn btn-action" type="submit" value="Create">Créer</button>
+                                        <button class="btn btn-danger" type="reset" >Annuler</button>
 									</div>
 								</div>
 							</form>
@@ -100,73 +101,7 @@
 		</div>
 	</div>	<!-- /container -->
     
-    
-    
-    <fieldset>
-        <legend>Etudiant</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nom)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.nom)
-            @Html.ValidationMessageFor(model => model.nom)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.prenom)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.prenom)
-            @Html.ValidationMessageFor(model => model.prenom)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.adresse)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.adresse)
-            @Html.ValidationMessageFor(model => model.adresse)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.email)
-            @Html.ValidationMessageFor(model => model.email)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.sexe)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.sexe)
-            @Html.ValidationMessageFor(model => model.sexe)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nationalite)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.nationalite)
-            @Html.ValidationMessageFor(model => model.nationalite)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.password)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.password)
-            @Html.ValidationMessageFor(model => model.password)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+       
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+

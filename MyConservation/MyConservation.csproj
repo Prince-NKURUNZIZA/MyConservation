@@ -263,6 +263,7 @@
     <Content Include="Assets2\js\headroom.js" />
     <Content Include="Assets2\js\headroom.min.js" />
     <Content Include="Assets2\js\html5shiv.js" />
+    <Content Include="Assets2\js\jquery-1.11.1.min.js" />
     <Content Include="Assets2\js\jQuery.headroom.js" />
     <Content Include="Assets2\js\jQuery.headroom.min.js" />
     <Content Include="Assets2\js\respond.min.js" />
@@ -283,6 +284,7 @@
     <Content Include="Assets\css\bootstrap-theme.min.css" />
     <Content Include="Assets\css\bootstrap.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\dataTables.bootstrap4.css" />
     <Content Include="Assets\css\dataTables.bootstrap4.min.css" />
     <Content Include="Assets\css\datepicker.css" />
     <Content Include="Assets\css\datepicker3.css" />
@@ -298,6 +300,7 @@
     <Content Include="Assets\js\chart.js" />
     <Content Include="Assets\js\chart.min.js" />
     <Content Include="Assets\js\custom.js" />
+    <Content Include="Assets\js\dataTables.bootstrap4.js" />
     <Content Include="Assets\js\dataTables.bootstrap4.min.js" />
     <Content Include="Assets\js\easypiechart-data.js" />
     <Content Include="Assets\js\easypiechart.js" />
@@ -305,6 +308,7 @@
     <Content Include="Assets\js\jquery-1.11.1.js" />
     <Content Include="Assets\js\jquery-1.11.1.min.js" />
     <Content Include="Assets\js\jquery-3.5.1.js" />
+    <Content Include="Assets\js\jquery.dataTables.js" />
     <Content Include="Assets\js\jquery.dataTables.min.js" />
     <Content Include="Assets\js\lumino.glyphs.js" />
     <Content Include="Assets\js\npm.js" />
@@ -404,6 +408,7 @@
     <Content Include="Assets3\css\bootstrap.css.map" />
     <Content Include="Assets3\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\DataTable.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

@@ -48,6 +48,13 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(Universite universite)
         {
+            bool IsAdminExist = db.Universites.Any(x => x.nomUniversite == universite.nomUniversite && x.id != universite.id);
+            if (IsAdminExist == true)
+            {
+                TempData["AlertMessage2"] = "L'universite existe deja....!";
+                return RedirectToAction("Index");
+            }
+           
             if (ModelState.IsValid)
             {
                 db.Universites.Add(universite);

@@ -19,9 +19,11 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
-       /* List<CompteEtudiantModel> E =(from doc in db.Documents join etu in db.Etudiants
+           /* var e = "";
+            e = (string)Session["nomEtudiant"];
+        List<CompteEtudiantModel> E =(from doc in db.Documents join etu in db.Etudiants
                                             on doc.id equals etu.id
-                  where (@Session["nomEtudiant"] == etu.email)
+                  where etu.email equals e
                    select new CompteEtudiantModel
                    {
                        titre = doc.titre,
@@ -81,12 +83,19 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(Document document)
         {
+            foreach (string upload in Request.Files)
+            {
+                if (Request.Files[upload].FileName != "")
+                {
+                    string path = AppDomain.CurrentDomain.BaseDirectory + "/App_Data/uploads/";
+                    string filename = Path.GetFileName(Request.Files[upload].FileName);
+                    Request.Files[upload].SaveAs(Path.Combine(path, filename));
+                }
+            }    
 
    if (ModelState.IsValid)
             {
                
-                
-
                 db.Documents.Add(document);
                 db.SaveChanges();
                 TempData["AlertMessage"] = "Enregistre avec sucess....!";

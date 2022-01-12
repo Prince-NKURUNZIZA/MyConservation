@@ -40,10 +40,10 @@ namespace MyConservation
                         "~/Content/themes/base/jquery.ui.theme.css"));
             bundles.Add(new StyleBundle("~/Assets/css").Include(
                 "~/Assets/css/bootstrap.css",
+                "~/Assets/css/dataTables.bootstrap4.css",
                 "~/Assets/css/fontawesome.css",
                 "~/Assets/css/datepicker.css",
-                "~/Assets/css/all.css",
-                "~/Assets/css/dataTables.bootstrap4.min.css",
+                "~/Assets/css/all.css", 
                 "~/Assets/css/styles.css"
                 ));
             bundles.Add(new ScriptBundle("~/Assets/js").Include(
@@ -54,9 +54,9 @@ namespace MyConservation
             "~/Assets/js/easypiechart.js",
             "~/Assets/js/easypiechart-data.js",
             "~/Assets/js/bootstrap-datepicker.js",
-             "~/Assets/js/dataTables.bootstrap4.min.js",
+             "~/Assets/js/dataTables.bootstrap4.js",
               "~/Assets/js/jquery-3.5.1.js",
-               "~/Assets/js/jquery.dataTables.min.js",
+               "~/Assets/js/jquery.dataTables.js",
             "~/Assets/js/custom.js"));
             bundles.Add(new ScriptBundle("~/Assets2/css").Include(
                 "~/Assets2/css/bootstrap.css",
@@ -69,6 +69,7 @@ namespace MyConservation
                 "~/Assets2/js/headroom.js",
                 "~/Assets2/js/jQuery.headroom.js",
                 "~/Assets2/js/template.js",
+                "~/Assets2/js/jquery-1.11.1.min.js",
                 "~/Assets2/js/Script.js"
                 ));
             bundles.Add(new StyleBundle("~/Assets3/css").Include(

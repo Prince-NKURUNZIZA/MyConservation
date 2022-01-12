@@ -51,6 +51,12 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(Etudiant etudiant)
         {
+            bool IsAdminExist = db.Etudiants.Any(x => x.email == etudiant.email && x.id != etudiant.id);
+            if (IsAdminExist == true)
+            {
+                TempData["AlertMessage2"] = "Votre email est déjà utilisé....!";
+                return RedirectToAction("Login");
+            }
             if (ModelState.IsValid)
             {
                 db.Etudiants.Add(etudiant);
@@ -78,7 +84,8 @@ namespace MyConservation.Controllers
                  
         if(obj != null){
 
-            Session["nomEtudiant"] = obj.email;
+            Session["nomEtudiant"] = obj.prenom;
+            
             return RedirectToAction("Acceuil","CompteEtudiant");
 
         }

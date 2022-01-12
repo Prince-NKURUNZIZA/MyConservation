@@ -93,60 +93,8 @@
 		</div>
 	</div>	<!-- /container -->
 	
-	<section class="container-full top-space">
-		<div id="map"></div>
-	</section>
 
-
-    <fieldset>
-        <legend>Message</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nom)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.nom)
-            @Html.ValidationMessageFor(model => model.nom)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.email)
-            @Html.ValidationMessageFor(model => model.email)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.telephone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.telephone)
-            @Html.ValidationMessageFor(model => model.telephone)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.objet)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.objet)
-            @Html.ValidationMessageFor(model => model.objet)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.message1)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.message1)
-            @Html.ValidationMessageFor(model => model.message1)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+        
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
