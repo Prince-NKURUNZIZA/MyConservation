@@ -5,6 +5,7 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div id='sectionAimprimer'>
 <h1 id="Acc">Les details d'un document</h1>
 
 <fieldset>
@@ -47,10 +48,21 @@
     <h4>Telechargement : @Html.DisplayFor(model => model.autoriseTelecharge)</h4>
     </div>
 </fieldset>
+        </div>
 <p>
     @Html.ActionLink("Modifier", "Edit", new { id=Model.id }, new{@class="btn btn-info"}) |
     @Html.ActionLink("Retour à la liste", "Index")
+    <button class="btn btn-info" onClick="imprimer('sectionAimprimer')">Imprimer</button>
 </p>
+    
     </div>
 
-
+<script>
+function imprimer(divName) {
+      var printContents = document.getElementById(divName).innerHTML;    
+   var originalContents = document.body.innerHTML;      
+   document.body.innerHTML = printContents;     
+   window.print();     
+   document.body.innerHTML = originalContents;
+   }
+</script>

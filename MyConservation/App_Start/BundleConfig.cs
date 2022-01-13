@@ -60,6 +60,7 @@ namespace MyConservation
             "~/Assets/js/custom.js"));
             bundles.Add(new ScriptBundle("~/Assets2/css").Include(
                 "~/Assets2/css/bootstrap.css",
+                "~/Assets2/css/dataTables.bootstrap4.css",
                 "~/Assets2/css/bootstrap-theme.css",
                 "~/Assets2/css/font-awesome.css",
                 "~/Assets2/css/main.css"
@@ -70,6 +71,9 @@ namespace MyConservation
                 "~/Assets2/js/jQuery.headroom.js",
                 "~/Assets2/js/template.js",
                 "~/Assets2/js/jquery-1.11.1.min.js",
+                 "~/Assets2/js/dataTables.bootstrap4.js",
+              "~/Assets2/js/jquery-3.5.1.js",
+               "~/Assets2/js/jquery.dataTables.js",
                 "~/Assets2/js/Script.js"
                 ));
             bundles.Add(new StyleBundle("~/Assets3/css").Include(

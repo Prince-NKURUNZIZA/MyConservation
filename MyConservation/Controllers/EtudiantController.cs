@@ -18,6 +18,7 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
+           
             return View(db.Etudiants.ToList());
         }
 

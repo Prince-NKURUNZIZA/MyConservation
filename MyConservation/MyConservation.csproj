@@ -246,6 +246,8 @@
     <Content Include="Assets2\css\bootstrap-theme.css" />
     <Content Include="Assets2\css\bootstrap.css" />
     <Content Include="Assets2\css\bootstrap.min.css" />
+    <Content Include="Assets2\css\dataTables.bootstrap4.css" />
+    <Content Include="Assets2\css\dataTables.bootstrap4.min.css" />
     <Content Include="Assets2\css\font-awesome.css" />
     <Content Include="Assets2\css\font-awesome.min.css" />
     <Content Include="Assets2\css\main.css" />
@@ -259,11 +261,16 @@
     <Content Include="Assets2\images\logo2.png" />
     <Content Include="Assets2\images\mac.jpg" />
     <Content Include="Assets2\images\Page.jpg" />
+    <Content Include="Assets2\js\dataTables.bootstrap4.js" />
+    <Content Include="Assets2\js\dataTables.bootstrap4.min.js" />
     <Content Include="Assets2\js\google-map.js" />
     <Content Include="Assets2\js\headroom.js" />
     <Content Include="Assets2\js\headroom.min.js" />
     <Content Include="Assets2\js\html5shiv.js" />
     <Content Include="Assets2\js\jquery-1.11.1.min.js" />
+    <Content Include="Assets2\js\jquery-3.5.1.js" />
+    <Content Include="Assets2\js\jquery.dataTables.js" />
+    <Content Include="Assets2\js\jquery.dataTables.min.js" />
     <Content Include="Assets2\js\jQuery.headroom.js" />
     <Content Include="Assets2\js\jQuery.headroom.min.js" />
     <Content Include="Assets2\js\respond.min.js" />
@@ -571,6 +578,7 @@
     <Content Include="Views\CompteEtudiant\Downloads.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\files\" />
     <Folder Include="Fichiers\" />
     <Folder Include="Views\AFichiers\" />
     <Folder Include="Views\Repports\" />

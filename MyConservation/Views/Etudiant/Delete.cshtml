@@ -40,8 +40,18 @@
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
-    <button type="submit" value="Delete" class="btn btn-danger">Supprimer</button>
+    <button type="submit" onclick="confirmer()" value="Delete" class="btn btn-danger">Supprimer</button>
               
         @Html.ActionLink("Retour sur la liste", "Index")
 }
 </div>
+ 
+<script>
+    function confirmer() {
+
+        var res = confirm("Êtes-vous sûr de vouloir supprimer?");
+        if (res) {
+            // Mettez ici la logique de suppression
+        }
+    }
+</script>

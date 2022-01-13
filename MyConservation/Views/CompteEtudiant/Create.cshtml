@@ -7,16 +7,7 @@
 <header id="head" class="secondary"></header>
  
 
-
-<h2>Upload</h2>  
-
-<input type="file" name="FileUpload1" id="fileUpload" /><br />  
-<input id="btnUploadFile" type="button" value="Upload File" />  
-@Html.ActionLink("Documents", "Downloads")
-
-
-
-@using (Html.BeginForm("Create","CompteEtudiant",FormMethod.Post, new {enctype="multpart/form-data" }))
+@using (Html.BeginForm("Create","CompteEtudiant",FormMethod.Post, new {enctype="multipart/form-data" }))
 {
    
      @Html.ValidationSummary(true)
@@ -46,7 +37,10 @@
 							
 							<hr>
 
-							<form>
+
+                            @using (Html.BeginForm("Create", "CompteEtudiant", FormMethod.Post, new { enctype = "multipart/form-data"}))
+                            {
+                                @Html.AntiForgeryToken()
 								<div class="top-margin">
 									<label>Titre du document</label>
 									<input type="text" name="titre" class="form-control">
@@ -84,10 +78,9 @@
 								</div>
                                 <div class="top-margin">
 									<label>Votre fichier</label>
-                                  <input type="file" name="fichier" id= "fichier"  class="form-control" /><br />  
-                                  
-                                     @Html.ValidationMessageFor(model => model.fichier)
- 
+                                  <input type="file" name="fichier" id= "docfile"  class="form-control" /><br />  
+                                @Html.ValidationMessageFor(model => model.fichier)
+                                 
 								</div>
 
 								<div class="row top-margin">
@@ -118,7 +111,7 @@
     @Html.ActionLink("Retourne sur vos depot", "Index")
 </div>
 								</div>
-							</form>
+                            }
 						</div>
 					</div>
 

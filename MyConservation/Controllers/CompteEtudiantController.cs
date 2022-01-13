@@ -82,8 +82,20 @@ namespace MyConservation.Controllers
 
         [HttpPost]
         public ActionResult Create(Document document)
-        {
-            foreach (string upload in Request.Files)
+        { 
+
+           /* string fileName = Path.GetFileNameWithoutExtension(document.docfile.FileName);
+            string extension = Path.GetExtension(document.docfile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+
+           
+            fileName = Path.Combine(Server.MapPath("~/Assets/files"), fileName);
+            
+
+           document.docfile.SaveAs(fileName);*/
+
+
+           /* foreach (string upload in Request.Files)
             {
                 if (Request.Files[upload].FileName != "")
                 {
@@ -91,10 +103,11 @@ namespace MyConservation.Controllers
                     string filename = Path.GetFileName(Request.Files[upload].FileName);
                     Request.Files[upload].SaveAs(Path.Combine(path, filename));
                 }
-            }    
+            }   */ 
 
    if (ModelState.IsValid)
             {
+               
                
                 db.Documents.Add(document);
                 db.SaveChanges();
