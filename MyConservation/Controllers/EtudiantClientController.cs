@@ -85,7 +85,8 @@ namespace MyConservation.Controllers
         if(obj != null){
 
             Session["nomEtudiant"] = obj.prenom;
-            
+            Session["idEtudiant"] = obj.id;
+            Session["nomAuteur"] = obj.nom;
             return RedirectToAction("Acceuil","CompteEtudiant");
 
         }

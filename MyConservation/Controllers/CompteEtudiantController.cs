@@ -19,24 +19,11 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
-           /* var e = "";
-            e = (string)Session["nomEtudiant"];
-        List<CompteEtudiantModel> E =(from doc in db.Documents join etu in db.Etudiants
-                                            on doc.id equals etu.id
-                  where etu.email equals e
-                   select new CompteEtudiantModel
-                   {
-                       titre = doc.titre,
-                       domaine = doc.domaine,
-                       nature = doc.nature,
-                       fichier = doc.fichier,
-                       etatPublication = doc.etatPublication,
-                       autoriseTelecharge = doc.autoriseTelecharge,
-                   }).ToList();*/
+        
                    
             var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1);
-            
-            
+
+
             return View(documents.ToList());
         }
         public ActionResult Acceuil()
@@ -62,7 +49,8 @@ namespace MyConservation.Controllers
 
         public ActionResult Create()
         {
-            
+          
+           
             ViewBag.diplome = new SelectList(db.Diplomes, "id", "niveau");
             ViewBag.domaine = new SelectList(db.DomaineFormations, "id", "nomDomaine");
             ViewBag.nature = new SelectList(db.NatureDocuments, "id", "nature");
@@ -81,8 +69,10 @@ namespace MyConservation.Controllers
         }  
 
         [HttpPost]
-        public ActionResult Create(Document document)
-        { 
+        public ActionResult Create(Document document, HttpPostedFileBase fichier)
+        {
+
+           
 
            /* string fileName = Path.GetFileNameWithoutExtension(document.docfile.FileName);
             string extension = Path.GetExtension(document.docfile.FileName);
@@ -103,13 +93,23 @@ namespace MyConservation.Controllers
                     string filename = Path.GetFileName(Request.Files[upload].FileName);
                     Request.Files[upload].SaveAs(Path.Combine(path, filename));
                 }
-            }   */ 
+            }   */
+
+           
 
    if (ModelState.IsValid)
             {
-               
+                if (fichier != null)
+                {
+                    var fileName = Path.GetFileName(fichier.FileName); 
+                    string name = Path.GetFileNameWithoutExtension(fileName);
+                    string path = Path.Combine(Server.MapPath("~/Fichiers"), Path.GetFileName(fichier.FileName));
+                    fichier.SaveAs(path);
+
+                }
                
                 db.Documents.Add(document);
+                
                 db.SaveChanges();
                 TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");
@@ -123,10 +123,12 @@ namespace MyConservation.Controllers
             return View(document);
         }
         //////////////////////////////////////////////////////////
+      
+
 
         public ActionResult Downloads()
         {
-            var dir = new System.IO.DirectoryInfo(Server.MapPath("~/App_Data/uploads/"));
+            var dir = new System.IO.DirectoryInfo(Server.MapPath("~/Fichiers/"));
             System.IO.FileInfo[] fileNames = dir.GetFiles("*.*"); List<string> items = new List<string>();
             foreach (var file in fileNames)
             {
@@ -137,7 +139,7 @@ namespace MyConservation.Controllers
 
         public FileResult Download(string ImageName)
         {
-            var FileVirtualPath = "~/App_Data/uploads/" + ImageName;
+            var FileVirtualPath = "~/Fichiers/" + ImageName;
             return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
         }
       

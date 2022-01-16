@@ -6,12 +6,12 @@
 }
 <header id="head" class="secondary"></header>
 <div class="container Acceuil">
+    <div id='sectionAimprimer'>
 <h2 id="Acc">Les détails de votre document</h2>
 
 <fieldset>
     <legend>Document</legend>
 
-   
     <div class="display-field">
      Titre :   @Html.DisplayFor(model => model.titre)
     </div>
@@ -53,8 +53,19 @@
      Autorisation de télecharge :   @Html.DisplayFor(model => model.autoriseTelecharge)
     </div>
 </fieldset>
+        </div>
 <p>
     @Html.ActionLink("Modifier", "Edit", new { id = Model.id }, new {@class="btn btn-xs btn-info" }) |
     @Html.ActionLink("Retourne sur la page d'acceuil", "Acceuil")
+    <button class="btn btn-info" onClick="imprimer('sectionAimprimer')">Imprimer</button>
 </p>
 </div>
+<script>
+function imprimer(divName) {
+      var printContents = document.getElementById(divName).innerHTML;    
+   var originalContents = document.body.innerHTML;      
+   document.body.innerHTML = printContents;     
+   window.print();     
+   document.body.innerHTML = originalContents;
+   }
+</script>

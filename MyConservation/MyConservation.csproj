@@ -227,6 +227,7 @@
     <Compile Include="Models\Evenement.cs">
       <DependentUpon>ConservationModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\Galery.cs">
       <DependentUpon>ConservationModel1.tt</DependentUpon>
     </Compile>
