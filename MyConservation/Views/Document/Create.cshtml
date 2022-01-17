@@ -5,13 +5,13 @@
     Layout = "~/Views/Layouts/_Default.cshtml";
 }
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-@using (Html.BeginForm("Create","Document",FormMethod.Post, new {enctype="multpart/form-data" }))
+@using (Html.BeginForm("Create","Document",FormMethod.Post, new {enctype="multipart/form-data" }))
 {
    
      @Html.ValidationSummary(true)
 
-  <div class="container">
-<h1 id="Acc" class="page-title">Ajouter un nouveau traveau</h1>
+  <div class="container Acceuil">
+
 		
 
 		<div class="row">
@@ -19,9 +19,9 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					
+					<h1 id="Acc" class="page-title">Conserver un nouveau document</h1>
 				</header>
-				
+	
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -29,15 +29,18 @@
 							
 							<hr>
 
-							<form>
+
+                            @using (Html.BeginForm("Create", "CompteEtudiant", FormMethod.Post, new { enctype = "multipart/form-data"}))
+                            {
+                                @Html.AntiForgeryToken()
 								<div class="top-margin">
-									<label>Titre du coment</label>
+									<label>Titre du document</label>
 									<input type="text" name="titre" class="form-control">
                                      @Html.ValidationMessageFor(model => model.titre)
 								</div>
 								<div class="top-margin">
 									<label>Auteur</label>
-				 @Html.DropDownList("nomAuteur", null,"Selection l'auteur", htmlAttributes: new {@class = "form-control"})
+				 @Html.DropDownList("nomAuteur", null, htmlAttributes: new { @class = "form-control", value="@Session['nomEtudiant']" })
             @Html.ValidationMessageFor(model => model.nomAuteur)
 								</div>
                                	<div class="top-margin">
@@ -67,29 +70,16 @@
 								</div>
                                 <div class="top-margin">
 									<label>Votre fichier</label>
-									<input type="file" name="fichier" class="form-control">
-                                     @Html.ValidationMessageFor(model => model.fichier)
+                                  <input type="file" name="fichier" id= "docfile"  class="form-control" /><br />  
+                                @Html.ValidationMessageFor(model => model.fichier)
+                                 
 								</div>
-
-								<div class="row top-margin">
-									<div class="col-sm-6">
-										<label>Etat de Publication <span class="text-danger"></span></label>
-							 @Html.EditorFor(model => model.etatPublication)
-            @Html.ValidationMessageFor(model => model.etatPublication)
-									</div>
-									<div class="col-sm-6">
-										<label>Autorisation de Telechargement <span class="text-danger"></span></label>
-				 @Html.EditorFor(model => model.autoriseTelecharge)
-            @Html.ValidationMessageFor(model => model.autoriseTelecharge)
-									</div>
-								</div>
-
-								<hr>
 
 								<div class="row">
 									
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-info" type="submit" value="Create">Conserve</button>
+
+										<button class="btn btn-info" id="btnUploadFile" type="submit" value="Create">Conserve</button>
 									</div>
                                     <div class="col-lg-4 text-right">
 										<button class="btn btn-danger" type="reset" >Annuler</button>
@@ -98,7 +88,7 @@
     @Html.ActionLink("Retourne sur vos depot", "Index")
 </div>
 								</div>
-							</form>
+                            }
 						</div>
 					</div>
 
@@ -110,7 +100,37 @@
 		</div>
 	</div> 
     
-    
+ <script src="~/Assets/js/jquery-1.11.1.js"></script>  
+<script>
+    $(document).ready(function () {
+        $('#btnUploadFile').on('click', function () {
+            var data = new FormData();
+            var files = $("#fileUpload").get(0).files;
+            // Add the uploaded image content to the form data collection  
+            if (files.length > 0) {
+                data.append("UploadedImage", files[0]);
+            }
+            // Make Ajax request with the contentType = false, and procesDate = false  
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: "myAction/Create",
+                contentType: false,
+                processData: false,
+                data: data
+            });
+
+            ajaxRequest.done(function (xhr, textStatus) {
+                // Do other operation  
+            });
+        });
+    });
+    var data = new FormData();
+    var files = $("#fileUpload").get(0).files;
+    // Add the uploaded image content to the form data collection  
+    if (files.length > 0) {
+        data.append("UploadedImage", files[0]);
+    }
+</script>    
    
 }
-    </div>
+    

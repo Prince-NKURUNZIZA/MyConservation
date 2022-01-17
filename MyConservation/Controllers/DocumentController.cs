@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using MyConservation.Models;
 using System.IO;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyConservation.Controllers
 {
@@ -69,6 +71,7 @@ namespace MyConservation.Controllers
 
                 }
                 document.fichier = fileName;
+                db.Documents.Add(document);
                 db.SaveChanges();
                 TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");

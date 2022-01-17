@@ -47,6 +47,9 @@
         <th>
             Auteur
         </th>
+        <th>
+            Université
+        </th>
         
         <th>
            Domaine
@@ -75,7 +78,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Etudiant.nom)
         </td>
-        
+        <td>
+           @Html.DisplayFor(modelItem => item.Universite1.nomUniversite)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.DomaineFormation.nomDomaine)
         </td>
