@@ -581,7 +581,6 @@
   <ItemGroup>
     <Folder Include="Assets\files\" />
     <Folder Include="Fichiers\" />
-    <Folder Include="Views\AFichiers\" />
     <Folder Include="Views\Repports\" />
   </ItemGroup>
   <ItemGroup>

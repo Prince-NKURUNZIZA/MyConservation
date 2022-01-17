@@ -56,12 +56,7 @@ Le site web MyConservation a pour but le partage des connaissances via la public
         <th>
             Fichier
         </th>
-        <th>
-            A.P
-        </th>
-        <th>
-            A.T
-        </th>
+        
         <th>Actions</th>
     </tr>
         </thead>
@@ -86,20 +81,16 @@ Le site web MyConservation a pour but le partage des connaissances via la public
         <td>
             @Html.DisplayFor(modelItem => item.fichier)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.etatPublication)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.autoriseTelecharge)
-        </td>
+        
         <td>
             
            @Html.ActionLink("Modifier", "Edit", new { id = item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
-             @Html.ActionLink("Telecharger", "Downloads")
+            @Html.ActionLink("Télècharge directement", "Download", new { ImageName =item.fichier })
             @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-xs btn-danger"})
             
-        </td>
+        </td>      
+          <td>@Html.ActionLink("View file", "", new { ImageName =item.fichier }) </td>  
     </tr>
 }
 </tbody>

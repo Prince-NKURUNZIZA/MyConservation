@@ -60,12 +60,7 @@
         <th>
             Fichier
         </th>
-        <th>
-            A.P
-        </th>
-        <th>
-            A.T
-        </th>
+        
         <th>Actions</th>
     </tr>
         </thead>
@@ -93,12 +88,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.fichier)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.etatPublication)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.autoriseTelecharge)
-        </td>
+        
         <td>
 <div class="dropdown">
                 <span class="dropdown-toggle dropdown-bg btn btn-outline-primary" role="button" id="dropdownMenuButton5"
@@ -108,6 +98,7 @@
                 <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton5">
             @Html.ActionLink("Modifier", "Edit", new { id = item.id }, new { @class="btn btn-info"}) |
             @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-warning"}) |
+             @Html.ActionLink("Télècharge", "Download", new { ImageName =item.fichier })
             @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-danger"})
                 </div>
             </div>

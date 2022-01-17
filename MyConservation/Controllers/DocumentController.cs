@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyConservation.Models;
+using System.IO;
 
 namespace MyConservation.Controllers
 {
@@ -53,11 +54,21 @@ namespace MyConservation.Controllers
         // POST: /Document/Create
 
         [HttpPost]
-        public ActionResult Create(Document document)
+        public ActionResult Create(Document document, HttpPostedFileBase fichier)
         {
+            string name = null;
+            string fileName = null;
             if (ModelState.IsValid)
             {
-                db.Documents.Add(document);
+                if (fichier != null)
+                {
+                    fileName = Path.GetFileName(fichier.FileName);
+                    name = Path.GetFileNameWithoutExtension(fileName);
+                    string path = Path.Combine(Server.MapPath("~/Fichiers"), Path.GetFileName(fichier.FileName));
+                    fichier.SaveAs(path);
+
+                }
+                document.fichier = fileName;
                 db.SaveChanges();
                 TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");
@@ -69,6 +80,23 @@ namespace MyConservation.Controllers
             ViewBag.nomAuteur = new SelectList(db.Etudiants, "id", "nom", document.nomAuteur);
             ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite", document.universite);
             return View(document);
+        }
+
+        public ActionResult Downloads()
+        {
+            var dir = new System.IO.DirectoryInfo(Server.MapPath("~/Fichiers/"));
+            System.IO.FileInfo[] fileNames = dir.GetFiles("*.*"); List<string> items = new List<string>();
+            foreach (var file in fileNames)
+            {
+                items.Add(file.Name);
+            }
+            return View(items);
+        }
+
+        public FileResult Download(string ImageName)
+        {
+            var FileVirtualPath = "~/Fichiers/" + ImageName;
+            return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
         }
 
         //

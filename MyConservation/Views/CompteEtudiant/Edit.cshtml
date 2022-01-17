@@ -83,22 +83,6 @@
         @Html.ValidationMessageFor(model => model.fichier)
         </div>
 
-        <div class="editor-label">
-            <label for="inputEmail4" class="form-label">Etat de Publication</label>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.etatPublication)
-            @Html.ValidationMessageFor(model => model.etatPublication)
-        </div>
-
-        <div class="editor-label">
-           <label for="inputEmail4" class="form-label">Autorisation de telechargement</label>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.autoriseTelecharge)
-            @Html.ValidationMessageFor(model => model.autoriseTelecharge)
-        </div>
-
         <p>
             <button type="submit" value="Save" class="btn btn-info">Modifier</button>
                <button type="reset" class="btn btn-danger">Annuler</button>

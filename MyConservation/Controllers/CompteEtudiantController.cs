@@ -74,18 +74,19 @@ namespace MyConservation.Controllers
         [HttpPost]
         public ActionResult Create(Document document, HttpPostedFileBase fichier)
         {
-
+            string name=null;
+            string fileName = null;
             if (ModelState.IsValid)
             {
                 if (fichier != null)
                 {
-                    var fileName = Path.GetFileName(fichier.FileName);
-                    string name = Path.GetFileNameWithoutExtension(fileName);
+                    fileName = Path.GetFileName(fichier.FileName);
+                    name = Path.GetFileNameWithoutExtension(fileName);
                     string path = Path.Combine(Server.MapPath("~/Fichiers"), Path.GetFileName(fichier.FileName));
                     fichier.SaveAs(path);
 
                 }
-
+                document.fichier = fileName;
                 db.Documents.Add(document);
 
                 db.SaveChanges();
