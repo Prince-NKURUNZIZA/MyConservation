@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using MyConservation.Models;
 
 namespace MyConservation.Controllers
@@ -19,9 +21,13 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
-        
-                   
-            var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1);
+            int idEtudiant =  0;
+            if(Session["idEtudiant"] != null)
+            {
+                idEtudiant =  Convert.ToInt32(Session["idEtudiant"].ToString());
+            }
+
+            var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1).Where(d => d.nomAuteur == idEtudiant).OrderByDescending(d=>d.id);
 
 
             return View(documents.ToList());
@@ -49,8 +55,8 @@ namespace MyConservation.Controllers
 
         public ActionResult Create()
         {
-          
-           
+
+
             ViewBag.diplome = new SelectList(db.Diplomes, "id", "niveau");
             ViewBag.domaine = new SelectList(db.DomaineFormations, "id", "nomDomaine");
             ViewBag.nature = new SelectList(db.NatureDocuments, "id", "nature");
@@ -63,53 +69,25 @@ namespace MyConservation.Controllers
 
         //
         // POST: /CompteEtudiant/Create
-        public bool Infile(HttpPostedFileBase imgfile)
-        {
-            return (imgfile != null && imgfile.ContentLength > 0) ? true : false;
-        }  
+
 
         [HttpPost]
         public ActionResult Create(Document document, HttpPostedFileBase fichier)
         {
 
-           
-
-           /* string fileName = Path.GetFileNameWithoutExtension(document.docfile.FileName);
-            string extension = Path.GetExtension(document.docfile.FileName);
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-
-           
-            fileName = Path.Combine(Server.MapPath("~/Assets/files"), fileName);
-            
-
-           document.docfile.SaveAs(fileName);*/
-
-
-           /* foreach (string upload in Request.Files)
-            {
-                if (Request.Files[upload].FileName != "")
-                {
-                    string path = AppDomain.CurrentDomain.BaseDirectory + "/App_Data/uploads/";
-                    string filename = Path.GetFileName(Request.Files[upload].FileName);
-                    Request.Files[upload].SaveAs(Path.Combine(path, filename));
-                }
-            }   */
-
-           
-
-   if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 if (fichier != null)
                 {
-                    var fileName = Path.GetFileName(fichier.FileName); 
+                    var fileName = Path.GetFileName(fichier.FileName);
                     string name = Path.GetFileNameWithoutExtension(fileName);
                     string path = Path.Combine(Server.MapPath("~/Fichiers"), Path.GetFileName(fichier.FileName));
                     fichier.SaveAs(path);
 
                 }
-               
+
                 db.Documents.Add(document);
-                
+
                 db.SaveChanges();
                 TempData["AlertMessage"] = "Enregistre avec sucess....!";
                 return RedirectToAction("Index");
@@ -123,7 +101,7 @@ namespace MyConservation.Controllers
             return View(document);
         }
         //////////////////////////////////////////////////////////
-      
+
 
 
         public ActionResult Downloads()
@@ -142,7 +120,7 @@ namespace MyConservation.Controllers
             var FileVirtualPath = "~/Fichiers/" + ImageName;
             return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
         }
-      
+
 
         //
         // GET: /CompteEtudiant/Edit/5

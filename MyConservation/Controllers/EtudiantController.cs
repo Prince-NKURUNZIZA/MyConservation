@@ -18,8 +18,8 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
-           
-            return View(db.Etudiants.ToList());
+
+            return View(db.Etudiants.OrderByDescending(d => d.id).ToList());
         }
 
         //
