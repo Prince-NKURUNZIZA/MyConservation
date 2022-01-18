@@ -63,8 +63,22 @@
 
 								<div class="row top-margin">
 									<div class="col-sm-6">
-										<label>Nationalite <span class="text-danger">*</span></label>
-										<input type="text" name="nationalite" class="form-control">
+										<label>Pays <span class="text-danger">*</span></label>
+										 <select id="Select2" name="nationalite" class="form-control">
+                                             <option value="Algerie">Algerie</option>
+                                        <option value="Burundi">Burundi</option>
+                                        <option value="Rwanda">Rwanda</option>
+                                             <option value="RDC">RDC</option>
+                                        <option value="Tanzanie">Tanzanie</option>
+                                             <option value="Kenya">Kenya</option>
+                                        <option value="Ouganda">Ouganda</option>
+                                             <option value="Nigeria">Nigeria</option>
+                                        <option value="Somalie">Somalie</option>
+                                             <option value="Egypt">Egypt</option>
+                                        <option value="Ethiopie">Ethiopie</option>
+                                             <option value="Maroc">Maroc</option>
+                                        <option value="Benin">Benin</option>
+                                    </select>
                                         @Html.ValidationMessageFor(model => model.nationalite)
 									</div>
 									<div class="col-sm-6">

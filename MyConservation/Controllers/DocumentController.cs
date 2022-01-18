@@ -21,8 +21,8 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
-            
-            var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1);
+
+            var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1).OrderByDescending(d => d.id);
             return View(documents.ToList());
         }
 
