@@ -14,6 +14,15 @@
 
 	<!-- container -->
 	<div class="container">
+        <div class="container Acceuil">
+         @if (TempData["AlertMessage"] != null) { 
+    
+        <div class="alert alert-success">
+     <strong>Success !</strong>   @TempData["AlertMessage"]
+
+    </div>
+    
+    }
 
 		<ol class="breadcrumb">
 			<li><a href="@Url.Action("Index","Client")">Acceuil</a></li>
@@ -67,8 +76,9 @@
 								<input class="btn btn-action" type="submit" value="Envoyer">
 							</div>
 						</div>
+                        
 					</form>
-
+                
 			</article>
 			<!-- /Article -->
 			
@@ -93,61 +103,8 @@
 
 		</div>
 	</div>	<!-- /container -->
-	
+	</div>
 	<section class="container-full top-space">
 		<div id="map"></div>
-	</section>
-
-
-    <fieldset>
-        <legend>Message</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nom)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.nom)
-            @Html.ValidationMessageFor(model => model.nom)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.email)
-            @Html.ValidationMessageFor(model => model.email)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.telephone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.telephone)
-            @Html.ValidationMessageFor(model => model.telephone)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.objet)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.objet)
-            @Html.ValidationMessageFor(model => model.objet)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.message1)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.message1)
-            @Html.ValidationMessageFor(model => model.message1)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+	</section>       
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

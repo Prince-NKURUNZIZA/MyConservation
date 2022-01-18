@@ -52,7 +52,8 @@ namespace MyConservation.Controllers
             {
                 db.Messages.Add(message);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["AlertMessage"] = "Message envoye avec success....!";
+                return RedirectToAction("Create");
             }
 
             return View(message);
