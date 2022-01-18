@@ -4,63 +4,69 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/LayoutsClient/_Default.cshtml";
 }
-
-<h2>Index</h2>
-
+<header id="head" class="secondary"></header>
+      
+<h2 id="Acc">LES TRAVAUX DES LAUREATS DES UNIVERSITES PUBLIES SUR MyConservation</h2>
+<div class="container Acceuil">
+    <!--/.row-->
 <p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+    
+  MyConservation a pour but de Conserver un maximum des traveaux des étudiants 
+    en accès gratuit sur internet. Pour déposer votre traveau, il suffit d'avoir
+    un compte sur MyConservation, vous pouvez le creer directement
+    en cliquant ici : <h4> @Html.ActionLink("Creer Compte","Create", "EtudiantClient")</h4>  
+    .
+ Votre traveau est mis en ligne peu de temps après. 
+<h4>Préambule</h4>
+Le site web MyConservation a pour but le partage des connaissances via la publication et
+     la consultation gratuite via internet de documents réalisés par des étudiants dans le cadre de leurs études,
+     ou des chercheurs dans le cadre de leurs recherches. Son objectif est d'offrir un accès au savoir au plus grand 
+    nombre sans limitations géographiques, financières ou autres. 
+        
+</p> 
+<div class="row">
+			<div class="col-lg-12">
+				<h3 class="page-header" id="Acc"><i class="fa fa-first-order" aria-hidden="true"></i>Les traveaux qui sont sur MyConservation :</h3>
+			</div>
+		</div>
+
+<table id="exemple" class="table table-striped table-bordered ">
+    
+    <thead id="Acc">
     <tr>
+        
         <th>
-            @Html.DisplayNameFor(model => model.titre)
+            Titre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Etudiant.nom)
+            Auteur
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Universite1.nomUniversite)
+           Domaine
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Diplome1.niveau)
+           Nature
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DomaineFormation.nomDomaine)
+           Annee
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NatureDocument.nature)
+           Travail de fin d'etude
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.annee)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FileName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fichier)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.etatPublication)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.autoriseTelecharge)
-        </th>
-        <th></th>
+        
+        
     </tr>
+        </thead>
+    <tbody>
 
 @foreach (var item in Model) {
     <tr>
+        
         <td>
             @Html.DisplayFor(modelItem => item.titre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Etudiant.nom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Universite1.nomUniversite)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Diplome1.niveau)
+              @Html.DisplayFor(modelItem => item.Etudiant.prenom)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DomaineFormation.nomDomaine)
@@ -72,23 +78,26 @@
             @Html.DisplayFor(modelItem => item.annee)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FileName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.fichier)
         </td>
+        
         <td>
-            @Html.DisplayFor(modelItem => item.etatPublication)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.autoriseTelecharge)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            
+          
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
+            @Html.ActionLink("Télècharger", "Download", new { ImageName =item.fichier })
+
+        </td>      
+          <td> @Html.ActionLink("View file","", new { ImageName =item.fichier }) </td> 
+       
+        
     </tr>
 }
-
+</tbody>
 </table>
+
+    </div>
+@section scripts{
+    <script src="~/Scripts/DataTable.js"></script>
+    
+    }

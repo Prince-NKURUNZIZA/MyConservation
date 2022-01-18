@@ -6,6 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyConservation.Models;
+using System.IO;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyConservation.Controllers
 {
@@ -18,7 +21,7 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
-            var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1);
+            var documents = db.Documents.Include(d => d.Diplome1).Include(d => d.DomaineFormation).Include(d => d.NatureDocument).Include(d => d.Etudiant).Include(d => d.Universite1).OrderByDescending(d => d.id);
             return View(documents.ToList());
         }
 
@@ -67,6 +70,24 @@ namespace MyConservation.Controllers
             ViewBag.nomAuteur = new SelectList(db.Etudiants, "id", "nom", document.nomAuteur);
             ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite", document.universite);
             return View(document);
+        }
+
+
+        public ActionResult Downloads()
+        {
+            var dir = new System.IO.DirectoryInfo(Server.MapPath("~/Fichiers/"));
+            System.IO.FileInfo[] fileNames = dir.GetFiles("*.*"); List<string> items = new List<string>();
+            foreach (var file in fileNames)
+            {
+                items.Add(file.Name);
+            }
+            return View(items);
+        }
+
+        public FileResult Download(string ImageName)
+        {
+            var FileVirtualPath = "~/Fichiers/" + ImageName;
+            return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
         }
 
         //

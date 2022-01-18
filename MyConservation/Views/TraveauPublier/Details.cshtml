@@ -5,89 +5,61 @@
     Layout = "~/Views/LayoutsClient/_Default.cshtml";
 }
 
-<h2>Details</h2>
+<header id="head" class="secondary"></header>
+<div class="container Acceuil">
+    <div id='sectionAimprimer'>
+<h2 id="Acc">Les détails de ce travail</h2>
 
 <fieldset>
-    <legend>Document</legend>
+    <legend></legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.titre)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.titre)
+    <h4>Titre :  @Html.DisplayFor(model => model.titre) </h4> 
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Etudiant.nom)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Etudiant.nom)
+     <h4> Nom de l'auteur :  @Html.DisplayFor(model => model.Etudiant.nom) </h4>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Universite1.nomUniversite)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Universite1.nomUniversite)
+    <h4> Université :   @Html.DisplayFor(model => model.Universite1.nomUniversite) </h4>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Diplome1.niveau)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Diplome1.niveau)
+    <h4> Niveau diplome :   @Html.DisplayFor(model => model.Diplome1.niveau) </h4>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DomaineFormation.nomDomaine)
-    </div>
+    
     <div class="display-field">
-        @Html.DisplayFor(model => model.DomaineFormation.nomDomaine)
+    <h4> Domaine de formation :   @Html.DisplayFor(model => model.DomaineFormation.nomDomaine) </h4>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NatureDocument.nature)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.NatureDocument.nature)
+    <h4>  Nature du document :  @Html.DisplayFor(model => model.NatureDocument.nature) </h4>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.annee)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.annee)
+    <h4> Annee de publication :   @Html.DisplayFor(model => model.annee) </h4>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.FileName)
-    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.FileName)
+    <h4> Fichier:   @Html.DisplayFor(model => model.fichier) </h4>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.fichier)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.fichier)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.etatPublication)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.etatPublication)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.autoriseTelecharge)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.autoriseTelecharge)
-    </div>
 </fieldset>
+        </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+   
+    @Html.ActionLink("Retourne sur la page d'acceuil", "Index","Client")
+    <button class="btn btn-info" onClick="imprimer('sectionAimprimer')">Imprimer</button>
 </p>
+</div>
+<script>
+    function imprimer(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>

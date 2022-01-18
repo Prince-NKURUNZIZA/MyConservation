@@ -8,6 +8,8 @@
 
     @RenderPage("~/Views/PartialsClient/_Footer.cshtml")
     @Scripts.Render("~/Assets2/js")
+     @RenderSection("scripts",required: false)
+     <script src="~/Assets2/js/jquery-1.11.1.min.js"></script> 
   
 </body>
 </html>
