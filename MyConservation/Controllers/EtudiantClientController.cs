@@ -18,7 +18,13 @@ namespace MyConservation.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Etudiants.ToList());
+            int idEtudiant = 0;
+            if (Session["idEtudiant"] != null)
+            {
+                idEtudiant = Convert.ToInt32(Session["idEtudiant"].ToString());
+            }
+            var Etu = (db.Etudiants).Where(d => d.id == idEtudiant);
+            return View(Etu.ToList());
             
             
         }
