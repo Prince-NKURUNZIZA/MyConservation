@@ -1,0 +1,93 @@
+﻿@model MyConservation.Models.Document
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/LayoutsClient/_Default.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Document</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Etudiant.nom)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Etudiant.nom)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Universite1.nomUniversite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Universite1.nomUniversite)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Diplome1.niveau)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Diplome1.niveau)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DomaineFormation.nomDomaine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DomaineFormation.nomDomaine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NatureDocument.nature)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NatureDocument.nature)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.annee)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.annee)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FileName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FileName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fichier)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fichier)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.etatPublication)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.etatPublication)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.autoriseTelecharge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.autoriseTelecharge)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

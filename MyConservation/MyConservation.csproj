@@ -184,6 +184,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NatureDocumentController.cs" />
+    <Compile Include="Controllers\TraveauPublierController.cs" />
     <Compile Include="Controllers\UniversiteController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -577,6 +578,11 @@
     <Content Include="Views\LoginAdmin\LoginAdm.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\CompteEtudiant\Downloads.cshtml" />
+    <Content Include="Views\TraveauPublier\Index.cshtml" />
+    <Content Include="Views\TraveauPublier\Details.cshtml" />
+    <Content Include="Views\TraveauPublier\Create.cshtml" />
+    <Content Include="Views\TraveauPublier\Edit.cshtml" />
+    <Content Include="Views\TraveauPublier\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\files\" />
