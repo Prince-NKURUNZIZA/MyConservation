@@ -15,6 +15,9 @@
 	#head { min-height:420px; padding-top:160px; }
 	#head .lead { font-size: 34px; }
 }
+ a:active {
+      color: #800000;
+      }
 
 #Acc {
     color:white;
@@ -28,6 +31,19 @@
 #lulu a:hover {
 background-color: green;
 }
+
+#lulu a:active{
+ text-decoration:underline;
+ background-color:red;
+}
+#lulu a:visited {
+text-decoration:underline;
+ background-color:green;
+}
+.selected {
+background-color: green;
+}
+
 .AdminLog {
     background-color:#2F4F4F;
      border-style: solid;

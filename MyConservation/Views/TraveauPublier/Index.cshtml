@@ -41,6 +41,7 @@ Le site web MyConservation a pour but le partage des connaissances via la public
         <th>
             Auteur
         </th>
+         
         <th>
            Domaine
         </th>
@@ -51,10 +52,10 @@ Le site web MyConservation a pour but le partage des connaissances via la public
            Annee
         </th>
         <th>
-           Travail de fin d'etude
+            Travail de fin d'étude
         </th>
         
-        
+        <th></th>
     </tr>
         </thead>
     <tbody>
@@ -66,8 +67,9 @@ Le site web MyConservation a pour but le partage des connaissances via la public
             @Html.DisplayFor(modelItem => item.titre)
         </td>
         <td>
-              @Html.DisplayFor(modelItem => item.Etudiant.prenom)
+            @Html.DisplayFor(modelItem => item.Etudiant.nom)
         </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.DomaineFormation.nomDomaine)
         </td>
@@ -82,21 +84,16 @@ Le site web MyConservation a pour but le partage des connaissances via la public
         </td>
         
         <td>
-            
-          
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Télècharger", "Download", new { ImageName =item.fichier })
 
-        </td>      
-          <td> @Html.ActionLink("View file","", new { ImageName =item.fichier }) </td> 
-       
-        
+            @Html.ActionLink("Details", "Details", new { id=item.id })|
+            @Html.ActionLink("Télècharger", "Download", new { ImageName =item.fichier })|
+            <a href="/Fichiers/@item.fichier" target="_blank">ouvrir</a>
+        </td>
     </tr>
 }
 </tbody>
 </table>
-
-    </div>
+</div>
 @section scripts{
     <script src="~/Scripts/DataTable.js"></script>
     

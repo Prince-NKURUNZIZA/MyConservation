@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ConservationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ConservationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="ConservationModelStoreContainer">
-          <EntitySet Name="Administrateurs" EntityType="ConservationModel.Store.Administrateurs" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Diplomes" EntityType="ConservationModel.Store.Diplomes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DocumentPubliers" EntityType="ConservationModel.Store.DocumentPubliers" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Documents" EntityType="ConservationModel.Store.Documents" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DomaineFormations" EntityType="ConservationModel.Store.DomaineFormations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Etudiants" EntityType="ConservationModel.Store.Etudiants" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Evenements" EntityType="ConservationModel.Store.Evenements" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Galeries" EntityType="ConservationModel.Store.Galeries" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Messages" EntityType="ConservationModel.Store.Messages" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="NatureDocuments" EntityType="ConservationModel.Store.NatureDocuments" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Universites" EntityType="ConservationModel.Store.Universites" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Administrateurs" EntityType="ConservationModel.Store.Administrateurs" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Diplomes" EntityType="ConservationModel.Store.Diplomes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="DocumentPubliers" EntityType="ConservationModel.Store.DocumentPubliers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Documents" EntityType="ConservationModel.Store.Documents" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="DomaineFormations" EntityType="ConservationModel.Store.DomaineFormations" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Etudiants" EntityType="ConservationModel.Store.Etudiants" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Evenements" EntityType="ConservationModel.Store.Evenements" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Galeries" EntityType="ConservationModel.Store.Galeries" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Messages" EntityType="ConservationModel.Store.Messages" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NatureDocuments" EntityType="ConservationModel.Store.NatureDocuments" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Universites" EntityType="ConservationModel.Store.Universites" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="FK__DocumentP__titre__22AA2996" Association="ConservationModel.Store.FK__DocumentP__titre__22AA2996">
             <End Role="Documents" EntitySet="Documents" />
             <End Role="DocumentPubliers" EntitySet="DocumentPubliers" />
@@ -239,7 +239,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ConservationModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ConservationModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="ConservationEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Administrateurs" EntityType="ConservationModel.Administrateur" />
           <EntitySet Name="Diplomes" EntityType="ConservationModel.Diplome" />
@@ -488,7 +488,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ConservationModelStoreContainer" CdmEntityContainer="ConservationEntities">
           <EntitySetMapping Name="Administrateurs">
             <EntityTypeMapping TypeName="ConservationModel.Administrateur">
@@ -611,7 +611,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -626,6 +626,6 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams />
   </Designer>
 </edmx:Edmx>

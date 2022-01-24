@@ -24,6 +24,9 @@ namespace MyConservation.Controllers
                 idEtudiant = Convert.ToInt32(Session["idEtudiant"].ToString());
             }
             var Etu = (db.Etudiants).Where(d => d.id == idEtudiant);
+            var nombreEtu = (from num in db.Etudiants                 
+                          select num).Count();
+            Session["NombreEt"] = nombreEtu;
             return View(Etu.ToList());
             
             

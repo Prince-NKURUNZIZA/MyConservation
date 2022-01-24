@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ConservationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="ConservationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="ConservationModelStoreContainer">
-    <EntitySet Name="Administrateurs" EntityType="ConservationModel.Store.Administrateurs" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Diplomes" EntityType="ConservationModel.Store.Diplomes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DocumentPubliers" EntityType="ConservationModel.Store.DocumentPubliers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Documents" EntityType="ConservationModel.Store.Documents" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DomaineFormations" EntityType="ConservationModel.Store.DomaineFormations" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Etudiants" EntityType="ConservationModel.Store.Etudiants" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Evenements" EntityType="ConservationModel.Store.Evenements" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Galeries" EntityType="ConservationModel.Store.Galeries" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Messages" EntityType="ConservationModel.Store.Messages" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="NatureDocuments" EntityType="ConservationModel.Store.NatureDocuments" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Universites" EntityType="ConservationModel.Store.Universites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Administrateurs" EntityType="ConservationModel.Store.Administrateurs" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Diplomes" EntityType="ConservationModel.Store.Diplomes" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DocumentPubliers" EntityType="ConservationModel.Store.DocumentPubliers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Documents" EntityType="ConservationModel.Store.Documents" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DomaineFormations" EntityType="ConservationModel.Store.DomaineFormations" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Etudiants" EntityType="ConservationModel.Store.Etudiants" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Evenements" EntityType="ConservationModel.Store.Evenements" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Galeries" EntityType="ConservationModel.Store.Galeries" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Messages" EntityType="ConservationModel.Store.Messages" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="NatureDocuments" EntityType="ConservationModel.Store.NatureDocuments" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Universites" EntityType="ConservationModel.Store.Universites" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
     <AssociationSet Name="FK__DocumentP__titre__22AA2996" Association="ConservationModel.Store.FK__DocumentP__titre__22AA2996">
       <End Role="Documents" EntitySet="Documents" />
       <End Role="DocumentPubliers" EntitySet="DocumentPubliers" />
