@@ -210,7 +210,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConservationModel1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\DatabaseGeneratedAttribute.cs" />
     <Compile Include="Models\Diplome.cs">
       <DependentUpon>ConservationModel1.tt</DependentUpon>
     </Compile>
@@ -229,7 +228,6 @@
     <Compile Include="Models\Evenement.cs">
       <DependentUpon>ConservationModel1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\Galery.cs">
       <DependentUpon>ConservationModel1.tt</DependentUpon>
     </Compile>
@@ -239,7 +237,6 @@
     <Compile Include="Models\NatureDocument.cs">
       <DependentUpon>ConservationModel1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Table.cs" />
     <Compile Include="Models\Universite.cs">
       <DependentUpon>ConservationModel1.tt</DependentUpon>
     </Compile>

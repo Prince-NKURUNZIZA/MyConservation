@@ -13,7 +13,7 @@ namespace MyConservation.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+   // using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
     
     
@@ -34,7 +34,7 @@ namespace MyConservation.Models
         public int annee { get; set; }
         public string FileName { get; set; }
         public HttpPostedFileBase FileUploadFile { get; set; }
-        [DataType(DataType.Upload)]
+        //[DataType(DataType.Upload)]
         [Display(Name = "Upload File")]
         [Required(ErrorMessage = "Please choose file to upload.")]
          

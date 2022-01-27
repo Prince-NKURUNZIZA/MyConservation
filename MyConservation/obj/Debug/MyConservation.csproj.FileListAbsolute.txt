@@ -61,16 +61,9 @@ F:\MyConservation\MyConservation\bin\fr\WebMatrix.WebData.resources.dll
 F:\MyConservation\MyConservation\obj\Debug\MyConservation.dll
 F:\MyConservation\MyConservation\obj\Debug\MyConservation.pdb
 F:\MyConservation\MyConservation\obj\Debug\MyConservation.csprojResolveAssemblyReference.cache
-F:\MyConservation\MyConservation\bin\mscorlib.dll
 F:\MyConservation\MyConservation\bin\System.Net.Http.dll
 F:\MyConservation\MyConservation\bin\System.Net.Http.WebRequest.dll
 F:\MyConservation\MyConservation\bin\System.Net.Http.xml
 F:\MyConservation\MyConservation\bin\System.Net.Http.WebRequest.xml
-F:\MyConservation\MyConservation\bin\fr\mscorlib.resources.dll
 F:\MyConservation\MyConservation\bin\fr\System.Net.Http.resources.dll
 F:\MyConservation\MyConservation\bin\fr\System.Net.Http.WebRequest.resources.dll
-F:\MyConservation\MyConservation\bin\normidna.nlp
-F:\MyConservation\MyConservation\bin\normnfc.nlp
-F:\MyConservation\MyConservation\bin\normnfd.nlp
-F:\MyConservation\MyConservation\bin\normnfkc.nlp
-F:\MyConservation\MyConservation\bin\normnfkd.nlp
