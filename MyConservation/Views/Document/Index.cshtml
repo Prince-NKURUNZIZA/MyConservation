@@ -105,6 +105,7 @@
             @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="btn btn-warning"}) |
              @Html.ActionLink("Télècharge", "Download", new { ImageName =item.fichier })
             @Html.ActionLink("Supprimer", "Delete", new { id=item.id }, new { @class="btn btn-danger"})
+                     <a href="/Fichiers/@item.fichier" target="_blank">Voir</a>
                 </div>
             </div>
       
