@@ -40,7 +40,7 @@
 								</div>
 								<div class="top-margin">
 									<label>Auteur</label>
-				 @Html.DropDownList("nomAuteur", null, htmlAttributes: new { @class = "form-control", value="@Session['nomEtudiant']" })
+				 @Html.DropDownList("nomAuteur", null,"Selection l'auteur", htmlAttributes: new { @class = "form-control", value="@Session['nomEtudiant']" })
             @Html.ValidationMessageFor(model => model.nomAuteur)
 								</div>
                                	<div class="top-margin">
