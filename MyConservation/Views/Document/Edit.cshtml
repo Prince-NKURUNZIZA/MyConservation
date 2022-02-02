@@ -19,12 +19,12 @@
 		</div>
     <fieldset>
         
-
+        <div class="col-md-4">
         <div class="editor-label">
          <label for="inputEmail4" class="form-label">Titre</label>
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.titre)
+            @Html.EditorFor(model => model.titre, new { htmlAttributes = new { @class = "form-control col-xs-3" }, })
             @Html.ValidationMessageFor(model => model.titre)
         </div>
 
@@ -33,33 +33,34 @@
         </div>
         <div class="editor-field">
              
-                  @Html.DropDownList("nomAuteur", String.Empty)
+                  @Html.DropDownList("nomAuteur", null,new { @class = "form-control col-xs-3" })
             @Html.ValidationMessageFor(model => model.nomAuteur)
                  
          
         </div>
 
         <div class="editor-label">
-           <label for="inputEmail4" class="form-label">Universite</label>
+           <label for="inputEmail" class="form-label">Universite</label>
         </div>
         <div class="editor-field">
-            @Html.DropDownList("universite", String.Empty)
+            @Html.DropDownList("universite", null,new { @class = "form-control col-xs-3" })
             @Html.ValidationMessageFor(model => model.universite)
         </div>
-
+        
         <div class="editor-label">
            <label for="inputEmail4" class="form-label">Diplome</label>
         </div>
+        
         <div class="editor-field">
-            @Html.DropDownList("diplome", String.Empty)
+            @Html.DropDownList("diplome", null,new { @class = "form-control col-xs-3" })
             @Html.ValidationMessageFor(model => model.diplome)
-        </div>
-
+        
+           </div>
         <div class="editor-label">
           <label for="inputEmail4" class="form-label">Domaine de formation</label>
         </div>
         <div class="editor-field">
-            @Html.DropDownList("domaine", String.Empty)
+            @Html.DropDownList("domaine", null,new { @class = "form-control col-xs-3" })
             @Html.ValidationMessageFor(model => model.domaine)
         </div>
 
@@ -67,7 +68,7 @@
         <label for="inputEmail4" class="form-label">Nature du Document</label>
         </div>
         <div class="editor-field">
-            @Html.DropDownList("nature", String.Empty)
+            @Html.DropDownList("nature", null,new { @class = "form-control col-xs-3" })
             @Html.ValidationMessageFor(model => model.nature)
         </div>
 
@@ -86,14 +87,17 @@
            <input type="file" name="fichier" id="fichier"  required>
         @Html.ValidationMessageFor(model => model.fichier)
         </div>
-
+          
         
         <p>
             <button type="submit" value="Save" class="btn btn-info">Modifier</button>
                <button type="reset" class="btn btn-danger">Annuler</button>
             
         </p>
+            </div>
+        
     </fieldset>
+    
 }
 
 <div>
