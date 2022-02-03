@@ -62,6 +62,7 @@ namespace MyConservation.Controllers
             ViewBag.diplome = new SelectList(db.Diplomes, "id", "niveau");
             ViewBag.domaine = new SelectList(db.DomaineFormations, "id", "nomDomaine");
             ViewBag.nature = new SelectList(db.NatureDocuments, "id", "nature");
+       
             ViewBag.nomAuteur = new SelectList(db.Etudiants, "id", "nom");
             ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite");
 
@@ -74,7 +75,7 @@ namespace MyConservation.Controllers
 
 
         [HttpPost]
-        public ActionResult Create(Document document, HttpPostedFileBase fichier)
+        public ActionResult Create(Document model, HttpPostedFileBase fichier)
         {
             string name=null;
             string fileName = null;
@@ -88,7 +89,21 @@ namespace MyConservation.Controllers
                     fichier.SaveAs(path);
 
                 }
-                document.fichier = fileName;
+                Document document = new Document
+                {
+                    titre=model.titre,
+                    nomAuteur = Convert.ToInt32(Session["idEtudiant"].ToString()),
+                    universite=model.universite,
+                    diplome=model.diplome,
+                    domaine=model.domaine,
+                    nature=model.nature,
+                    annee=model.annee,
+                    fichier = fileName,
+                    etatPublication=model.etatPublication,
+                    autoriseTelecharge=model.autoriseTelecharge
+
+                };
+               // document.fichier = fileName;
                 db.Documents.Add(document);
 
                 db.SaveChanges();
@@ -96,12 +111,15 @@ namespace MyConservation.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.diplome = new SelectList(db.Diplomes, "id", "niveau", document.diplome);
-            ViewBag.domaine = new SelectList(db.DomaineFormations, "id", "nomDomaine", document.domaine);
-            ViewBag.nature = new SelectList(db.NatureDocuments, "id", "nature", document.nature);
-            ViewBag.nomAuteur = new SelectList(db.Etudiants, "id", "nom", document.nomAuteur);
-            ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite", document.universite);
-            return View(document);
+
+
+            ViewBag.diplome = new SelectList(db.Diplomes, "id", "niveau", model.diplome);
+            ViewBag.domaine = new SelectList(db.DomaineFormations, "id", "nomDomaine", model.domaine);
+            ViewBag.nature = new SelectList(db.NatureDocuments, "id", "nature", model.nature);
+
+            ViewBag.nomAuteur = new SelectList(db.Etudiants, "id", "nom", model.Etudiant);
+            ViewBag.universite = new SelectList(db.Universites, "id", "nomUniversite", model.universite);
+            return View(model);
         }
         //////////////////////////////////////////////////////////
 
